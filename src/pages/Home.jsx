@@ -24,7 +24,7 @@ export default function Home() {
           color: 'var(--color-primary)',
         }}
       >
-        Product Operations &amp; SEO
+        From demand generation to product — with a decade in organic search connecting the two.
       </p>
 
       <p
@@ -46,10 +46,10 @@ export default function Home() {
           color: 'var(--color-foreground)',
         }}
       >
-        I'm on a mission to learn something new every day. Started in finance,
-        turned into a digital marketer and product manager — working
-        cross-functionally with product, engineering, content, and SEO teams
-        across startups, agencies, and global corporations.
+        My career follows a logic that only makes sense in reverse: finance
+        taught me systems, marketing taught me people, and product gave me the
+        tools to build for both. These days I lead the Knowledge Base product
+        at Uber, where 44,000 support agents rely on search to do their jobs.
       </p>
 
       <div className="flex gap-4 justify-center mt-10">
@@ -63,7 +63,7 @@ export default function Home() {
             letterSpacing: 'var(--tracking-body)',
           }}
         >
-          About
+          About me
         </Link>
         <Link
           to="/projects"

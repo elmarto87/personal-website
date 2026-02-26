@@ -47,9 +47,11 @@ export default function About() {
               color: 'var(--color-foreground)',
             }}
           >
-            I build products and strategies at the intersection of search, content,
-            and operations. My career spans SaaS, e-commerce, and enterprise —
-            always chasing clarity for users and measurable impact for the business.
+            My career doesn't follow a straight line — I studied accounting and
+            finance in Cali, spent a year on a business exchange in Montpellier,
+            and came back looking for work that sat at the edge of data and
+            creativity. I found it in digital marketing, and specifically in SEO:
+            the discipline where content, technology, and user intent meet.
           </p>
           <p
             className="font-serif font-normal"
@@ -60,9 +62,14 @@ export default function About() {
               color: 'var(--color-foreground)',
             }}
           >
-            Currently leading the Knowledge Base product at Uber, serving 44,000+
-            support agents globally. Previously drove organic growth at HubSpot
-            across Latin America and Spain.
+            Since then I've led organic growth at HubSpot across Latin America
+            and Spain, managed SEO and ASO teams at Holafly, and now lead the
+            Knowledge Base product at Uber — a platform used by 44,000 support
+            agents to find answers and resolve cases. The through-line starts
+            earlier: at SuperDataScience, I ran end-to-end product launches and
+            built the email and content campaigns that grew their audience from
+            the ground up. Different companies, different scales — same question:
+            how do you make information findable?
           </p>
         </div>
       </div>
@@ -81,6 +88,17 @@ export default function About() {
         >
           Skills
         </h2>
+        <p
+          className="font-serif font-normal mt-0 mb-4"
+          style={{
+            fontSize: 'clamp(14px, 1.6vw, 16px)',
+            lineHeight: 'var(--leading-body)',
+            letterSpacing: '0',
+            color: 'var(--color-primary)',
+          }}
+        >
+          A mix of strategic and hands-on, built over a decade of cross-functional work.
+        </p>
         <div className="flex flex-wrap gap-2">
           {skills.map((skill) => (
             <span
@@ -112,6 +130,17 @@ export default function About() {
         >
           Work
         </h2>
+        <p
+          className="font-serif font-normal mt-0 mb-8"
+          style={{
+            fontSize: 'clamp(14px, 1.6vw, 16px)',
+            lineHeight: 'var(--leading-body)',
+            letterSpacing: '0',
+            color: 'var(--color-primary)',
+          }}
+        >
+          Eight years across startups, agencies, and enterprise. Most recent first.
+        </p>
         <Timeline items={career} />
       </div>
 
