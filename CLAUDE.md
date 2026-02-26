@@ -111,9 +111,9 @@ Full data lives in `src/data/career.js`. Key facts:
 
 ## GitHub Pages + Custom Domain Setup
 
-### 1. Repository Setup
-- Create a GitHub repo (e.g., `personal-website` under `martoduran10`)
-- Initialize git in this directory and push to `main`
+### 1. Repository
+- Repo: `https://github.com/elmarto87/personal-website`
+- Branches: `main` (source) + `gh-pages` (deployed by Actions)
 
 ### 2. GitHub Actions Deploy Workflow
 Create `.github/workflows/deploy.yml` — builds the Vite project and pushes `dist/` to the `gh-pages` branch on every push to `main`.
@@ -134,7 +134,7 @@ Add these in Namecheap's "Advanced DNS" panel:
 | A     | @    | 185.199.109.153          |
 | A     | @    | 185.199.110.153          |
 | A     | @    | 185.199.111.153          |
-| CNAME | www  | martoduran10.github.io   |
+| CNAME | www  | elmarto87.github.io      |
 
 DNS propagation: 30 min to 48 h. SSL is auto-provisioned by GitHub via Let's Encrypt after DNS resolves.
 

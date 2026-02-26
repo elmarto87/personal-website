@@ -7,27 +7,25 @@ Session-by-session task tracker. Mark tasks ✅ when complete. Update "Current S
 ## Current Session Notes
 > _Update this block at the start of each session. Paste what was last completed, any blockers, and the next priority._
 
-**Last completed:** Project initialized. CLAUDE.md + PLAN.md created. No code yet.
-**Next up:** Phase 1 — scaffold the Vite + React project.
+**Last completed:** Phase 1 complete. Site live at https://elmarto87.github.io/personal-website/
+**Next up:** Phase 4 — Home page copy (use copywriting skill), then Phase 5 — About page + profile photo.
+**Pending user action:** Configure Namecheap DNS to point martoduran.co → GitHub Pages (see CLAUDE.md for records).
 
 ---
 
-## Phase 1: Project Scaffold & Config
+## Phase 1: Project Scaffold & Config ✅
 
-- [ ] `npm create vite@latest . -- --template react` (in project root)
-- [ ] Install Tailwind CSS v3 + PostCSS + Autoprefixer, configure `tailwind.config.js`
-- [ ] Install React Router DOM v6, `gh-pages` package
-- [ ] Add `homepage` field in `package.json` pointing to `https://martoduran.co`
-- [ ] Configure `vite.config.js` — set `base: '/'`
-- [ ] Initialize Git repo, create GitHub remote, push `main`
-- [ ] Create `.github/workflows/deploy.yml` (build → push to `gh-pages`)
-- [ ] Add `public/CNAME` with `martoduran.co`
-- [ ] Verify GitHub Pages is serving from `gh-pages` branch
+- ✅ Vite + React + Tailwind CSS scaffolded
+- ✅ React Router (HashRouter), all design tokens, Beaumont fonts
+- ✅ Repo created: `https://github.com/elmarto87/personal-website`
+- ✅ GitHub Actions deploy workflow (`.github/workflows/deploy.yml`)
+- ✅ `public/CNAME` with `martoduran.co`
+- ✅ GitHub Pages live at `https://elmarto87.github.io/personal-website/`
 
-**Namecheap DNS (do once, outside code):**
-- [ ] Add 4 A records pointing to GitHub Pages IPs
-- [ ] Add CNAME `www` → `martoduran10.github.io`
-- [ ] Confirm SSL enabled in GitHub Pages settings
+**Namecheap DNS (do once — user action required):**
+- [ ] Add 4 A records pointing `@` to GitHub Pages IPs (see CLAUDE.md)
+- [ ] Add CNAME `www` → `elmarto87.github.io`
+- [ ] After DNS propagates (~24h), enable "Enforce HTTPS" in GitHub Pages settings
 
 ---
 
