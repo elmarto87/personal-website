@@ -1,0 +1,107 @@
+@import './tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------- */
+/* Font Face Declarations                       */
+/* ------------------------------------------- */
+
+@font-face {
+  font-family: 'Albert Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/albert-sans/AlbertSans-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Albert Sans';
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/albert-sans/AlbertSans-Italic-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/stix-two-text/STIXTwoText-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'STIX Two Text';
+  font-style: italic;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/assets/fonts/stix-two-text/STIXTwoText-Italic-VariableFont_wght.woff2') format('woff2');
+}
+
+/* ------------------------------------------- */
+/* Base Styles                                  */
+/* ------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(19px, 2.5vw, 22px);
+  letter-spacing: var(--tracking-body);
+  line-height: var(--leading-body);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ------------------------------------------- */
+/* Diamond Separator (Beaumont signature)       */
+/* ------------------------------------------- */
+
+.diamond-separator {
+  position: relative;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--color-secondary) 0%,
+    var(--color-secondary) calc(50% - 20px),
+    transparent calc(50% - 20px),
+    transparent calc(50% + 20px),
+    var(--color-secondary) calc(50% + 20px),
+    var(--color-secondary) 100%
+  );
+  margin: 2.5rem 0;
+  overflow: visible;
+}
+
+.diamond-separator::before {
+  content: '';
+  position: absolute;
+  left: calc(50% - 3.5px);
+  top: calc(50% - 3.5px);
+  height: 7px;
+  width: 7px;
+  background-color: var(--color-secondary);
+  transform: rotate(45deg);
+}
