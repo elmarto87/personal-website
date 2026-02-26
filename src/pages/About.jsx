@@ -38,12 +38,16 @@ export default function About() {
         }}
         className="bio-grid"
       >
-        {/* Photo placeholder */}
-        <div
+        {/* Profile photo */}
+        <img
+          src="/assets/images/martin.jpg"
+          alt="Martín Durán"
           style={{
             width: '100%',
-            aspectRatio: '4 / 5',
-            backgroundColor: 'var(--color-secondary)',
+            aspectRatio: '1 / 1',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            display: 'block',
           }}
         />
 
