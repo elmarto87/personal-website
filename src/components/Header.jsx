@@ -2,21 +2,48 @@ import { Link, NavLink } from 'react-router-dom'
 
 export default function Header() {
   return (
-    <header className="px-5 pt-10 pb-0">
+    <header
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        backgroundColor: 'var(--color-background)',
+        borderBottom: '1px solid var(--color-secondary)',
+        padding: '1.1rem var(--gutter)',
+      }}
+    >
       <div
-        className="flex items-center justify-between gap-8"
-        style={{ maxWidth: 'var(--wide-width)', marginLeft: 'auto', marginRight: 'auto' }}
+        style={{
+          maxWidth: 'var(--wide-width)',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '2rem',
+        }}
       >
+        {/* Site name — readable weight, no decoration */}
         <Link
           to="/"
-          className="font-sans font-medium text-base no-underline hover:underline"
-          style={{ color: 'var(--color-foreground)', letterSpacing: 'var(--tracking-body)' }}
+          style={{
+            fontFamily: 'var(--font-sans)',
+            fontWeight: 500,
+            fontSize: '15px',
+            letterSpacing: 'var(--tracking-body)',
+            color: 'var(--color-foreground)',
+            textDecoration: 'none',
+            transition: 'opacity var(--duration-fast) ease',
+          }}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+          onMouseLeave={e => e.currentTarget.style.opacity = '1'}
         >
           Martín Durán
         </Link>
 
+        {/* Nav — uppercase, tracked, small */}
         <nav>
-          <ul className="flex gap-7 list-none m-0 p-0">
+          <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
             {[
               { to: '/about', label: 'About' },
               { to: '/projects', label: 'Projects' },
@@ -24,10 +51,15 @@ export default function Header() {
               <li key={to}>
                 <NavLink
                   to={to}
-                  className="font-sans font-medium text-sm no-underline hover:underline"
                   style={({ isActive }) => ({
+                    fontFamily: 'var(--font-sans)',
+                    fontWeight: 500,
+                    fontSize: '11px',
+                    letterSpacing: 'var(--tracking-nav)',
+                    textTransform: 'uppercase',
+                    textDecoration: 'none',
                     color: isActive ? 'var(--color-foreground)' : 'var(--color-primary)',
-                    letterSpacing: 'var(--tracking-body)',
+                    transition: 'color var(--duration-fast) ease',
                   })}
                 >
                   {label}

@@ -3,47 +3,80 @@ import DiamondSeparator from '../components/DiamondSeparator'
 
 export default function Home() {
   return (
-    <div className="text-center py-12">
+    <div className="prose" style={{ textAlign: 'center', paddingTop: 'clamp(2rem, 5vw, 4rem)', paddingBottom: 'clamp(2rem, 5vw, 4rem)' }}>
+
+      {/* ── Name — STIX Two Text italic: the typographic statement ── */}
       <h1
-        className="font-sans font-bold m-0"
+        className="fade-up fade-up-1"
         style={{
-          fontSize: 'clamp(36px, 8vw, 54px)',
-          letterSpacing: 'var(--tracking-heading)',
-          lineHeight: 'var(--leading-heading)',
+          fontFamily: 'var(--font-serif)',
+          fontStyle: 'italic',
+          fontWeight: 400,
+          fontSize: 'clamp(44px, 10vw, 72px)',
+          letterSpacing: '-0.02em',
+          lineHeight: 1.05,
           color: 'var(--color-foreground)',
+          margin: '0 0 1.25rem 0',
         }}
       >
         Martín Durán
       </h1>
 
+      {/* ── Tagline ── */}
       <p
-        className="font-sans font-medium mt-4 mb-0"
+        className="fade-up fade-up-2"
         style={{
-          fontSize: 'clamp(17px, 2.5vw, 20px)',
+          fontFamily: 'var(--font-sans)',
+          fontWeight: 400,
+          fontSize: 'clamp(14px, 2vw, 16px)',
           letterSpacing: 'var(--tracking-body)',
+          lineHeight: 1.55,
           color: 'var(--color-primary)',
+          maxWidth: '480px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: '0.5rem',
         }}
       >
         From demand generation to product — with a decade in organic search connecting the two.
       </p>
 
+      {/* ── Current role ── */}
       <p
-        className="font-sans font-medium mt-2 mb-0 text-sm"
-        style={{ letterSpacing: 'var(--tracking-body)', color: 'var(--color-primary)' }}
+        className="fade-up fade-up-3"
+        style={{
+          fontFamily: 'var(--font-sans)',
+          fontWeight: 500,
+          fontSize: '12px',
+          letterSpacing: 'var(--tracking-nav)',
+          textTransform: 'uppercase',
+          color: 'var(--color-secondary)',
+          margin: 0,
+        }}
       >
-        KB Product Lead at Uber · ex-HubSpot
+        KB Product Lead, Uber · ex-HubSpot
       </p>
 
-      <DiamondSeparator className="my-10" />
+      {/* ── Diamond separator ── */}
+      <div className="fade-up fade-up-4">
+        <DiamondSeparator />
+      </div>
 
+      {/* ── Bio paragraph — STIX Two Text for the literary feel ── */}
       <p
-        className="font-serif font-normal text-left mx-auto"
+        className="fade-up fade-up-5"
         style={{
-          fontSize: 'clamp(16px, 2vw, 18px)',
+          fontFamily: 'var(--font-serif)',
+          fontWeight: 400,
+          fontSize: 'clamp(16px, 2.2vw, 19px)',
           lineHeight: 'var(--leading-body)',
           letterSpacing: '0',
-          maxWidth: '520px',
           color: 'var(--color-foreground)',
+          textAlign: 'left',
+          maxWidth: '500px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: '2.5rem',
         }}
       >
         My career follows a logic that only makes sense in reverse: finance
@@ -52,30 +85,16 @@ export default function Home() {
         at Uber, where 44,000 support agents rely on search to do their jobs.
       </p>
 
-      <div className="flex gap-4 justify-center mt-10">
-        <Link
-          to="/about"
-          className="inline-block font-sans font-semibold text-sm no-underline transition-opacity hover:opacity-75"
-          style={{
-            backgroundColor: 'var(--color-foreground)',
-            color: 'var(--color-background)',
-            padding: '0.75rem 1.5rem',
-            letterSpacing: 'var(--tracking-body)',
-          }}
-        >
-          About me
+      {/* ── CTAs ── */}
+      <div
+        className="fade-up fade-up-5"
+        style={{ display: 'flex', gap: '0.875rem', justifyContent: 'center', flexWrap: 'wrap' }}
+      >
+        <Link to="/about" className="btn btn-primary">
+          About me <span aria-hidden="true">→</span>
         </Link>
-        <Link
-          to="/projects"
-          className="inline-block font-sans font-semibold text-sm no-underline transition-colors"
-          style={{
-            border: '1px solid var(--color-foreground)',
-            color: 'var(--color-foreground)',
-            padding: '0.75rem 1.5rem',
-            letterSpacing: 'var(--tracking-body)',
-          }}
-        >
-          Projects
+        <Link to="/projects" className="btn btn-secondary">
+          Projects <span aria-hidden="true">→</span>
         </Link>
       </div>
     </div>

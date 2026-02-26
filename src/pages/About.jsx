@@ -4,47 +4,89 @@ import { career } from '../data/career'
 import { education } from '../data/education'
 import { skills } from '../data/skills'
 
+/* Section heading — shared style */
+function SectionHeading({ children }) {
+  return (
+    <h2
+      style={{
+        fontFamily: 'var(--font-sans)',
+        fontWeight: 700,
+        fontSize: 'clamp(11px, 1.4vw, 13px)',
+        letterSpacing: 'var(--tracking-nav)',
+        textTransform: 'uppercase',
+        color: 'var(--color-primary)',
+        margin: '0 0 1.5rem 0',
+      }}
+    >
+      {children}
+    </h2>
+  )
+}
+
 export default function About() {
   return (
     <div>
-      {/* ── Bio Header ── */}
-      <div className="flex flex-col md:flex-row gap-10 items-start">
-        {/* Photo placeholder — replace src once photo is available */}
-        <div className="md:w-1/3 flex-shrink-0">
-          <div
-            className="w-full rounded-sm"
-            style={{
-              aspectRatio: '1 / 1',
-              backgroundColor: 'var(--color-secondary)',
-            }}
-          />
-        </div>
 
-        <div className="md:w-2/3">
+      {/* ── Bio Header — uses full wide-width ── */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 2fr)',
+          gap: 'clamp(2rem, 5vw, 4rem)',
+          alignItems: 'start',
+          marginBottom: '0',
+        }}
+        className="bio-grid"
+      >
+        {/* Photo placeholder */}
+        <div
+          style={{
+            width: '100%',
+            aspectRatio: '4 / 5',
+            backgroundColor: 'var(--color-secondary)',
+          }}
+        />
+
+        {/* Bio text */}
+        <div style={{ paddingTop: '0.25rem' }}>
           <h1
-            className="font-sans font-bold mt-0 mb-1"
             style={{
-              fontSize: 'clamp(24px, 4vw, 32px)',
-              letterSpacing: 'var(--tracking-heading)',
-              lineHeight: 'var(--leading-heading)',
+              fontFamily: 'var(--font-serif)',
+              fontStyle: 'italic',
+              fontWeight: 400,
+              fontSize: 'clamp(28px, 4vw, 40px)',
+              letterSpacing: '-0.02em',
+              lineHeight: 1.1,
               color: 'var(--color-foreground)',
+              margin: '0 0 0.5rem 0',
             }}
           >
             Martín Durán
           </h1>
+
           <p
-            className="font-sans font-medium text-sm mb-5"
-            style={{ color: 'var(--color-primary)', letterSpacing: 'var(--tracking-body)' }}
-          >
-            KB Product Lead at Uber · ex-HubSpot · Cali, Colombia
-          </p>
-          <p
-            className="font-serif font-normal mt-0"
             style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '12px',
+              fontWeight: 500,
+              letterSpacing: 'var(--tracking-nav)',
+              textTransform: 'uppercase',
+              color: 'var(--color-secondary)',
+              margin: '0 0 1.75rem 0',
+            }}
+          >
+            KB Product Lead, Uber · ex-HubSpot · Cali, Colombia
+          </p>
+
+          <p
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontWeight: 400,
               fontSize: 'clamp(15px, 1.8vw, 17px)',
               lineHeight: 'var(--leading-body)',
               letterSpacing: '0',
               color: 'var(--color-foreground)',
+              margin: '0 0 1.15rem 0',
             }}
           >
             My career doesn't follow a straight line — I studied accounting and
@@ -53,13 +95,16 @@ export default function About() {
             creativity. I found it in digital marketing, and specifically in SEO:
             the discipline where content, technology, and user intent meet.
           </p>
+
           <p
-            className="font-serif font-normal"
             style={{
+              fontFamily: 'var(--font-serif)',
+              fontWeight: 400,
               fontSize: 'clamp(15px, 1.8vw, 17px)',
               lineHeight: 'var(--leading-body)',
               letterSpacing: '0',
               color: 'var(--color-foreground)',
+              margin: 0,
             }}
           >
             Since then I've led organic growth at HubSpot across Latin America
@@ -74,114 +119,100 @@ export default function About() {
         </div>
       </div>
 
-      <DiamondSeparator />
-
       {/* ── Skills ── */}
-      <div>
-        <h2
-          className="font-sans font-bold mt-0 mb-5"
-          style={{
-            fontSize: 'clamp(16px, 2vw, 20px)',
-            letterSpacing: 'var(--tracking-heading)',
-            lineHeight: 'var(--leading-heading)',
-          }}
-        >
-          Skills
-        </h2>
+      <div className="prose">
+        <DiamondSeparator />
+        <SectionHeading>Skills</SectionHeading>
+
         <p
-          className="font-serif font-normal mt-0 mb-4"
           style={{
-            fontSize: 'clamp(14px, 1.6vw, 16px)',
+            fontFamily: 'var(--font-serif)',
+            fontWeight: 400,
+            fontStyle: 'italic',
+            fontSize: 'clamp(14px, 1.6vw, 15px)',
             lineHeight: 'var(--leading-body)',
             letterSpacing: '0',
             color: 'var(--color-primary)',
+            margin: '0 0 1.5rem 0',
           }}
         >
           A mix of strategic and hands-on, built over a decade of cross-functional work.
         </p>
-        <div className="flex flex-wrap gap-2">
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
           {skills.map((skill) => (
-            <span
-              key={skill.label}
-              className="font-sans font-medium text-sm px-3 py-1"
-              style={{
-                border: '1px solid var(--color-secondary)',
-                color: 'var(--color-primary)',
-                letterSpacing: 'var(--tracking-body)',
-              }}
-            >
+            <span key={skill.label} className="skill-chip">
               {skill.label}
             </span>
           ))}
         </div>
       </div>
 
-      <DiamondSeparator />
+      {/* ── Work timeline ── */}
+      <div className="prose">
+        <DiamondSeparator />
+        <SectionHeading>Work</SectionHeading>
 
-      {/* ── Career Timeline ── */}
-      <div>
-        <h2
-          className="font-sans font-bold mt-0 mb-8"
-          style={{
-            fontSize: 'clamp(16px, 2vw, 20px)',
-            letterSpacing: 'var(--tracking-heading)',
-            lineHeight: 'var(--leading-heading)',
-          }}
-        >
-          Work
-        </h2>
         <p
-          className="font-serif font-normal mt-0 mb-8"
           style={{
-            fontSize: 'clamp(14px, 1.6vw, 16px)',
+            fontFamily: 'var(--font-serif)',
+            fontWeight: 400,
+            fontStyle: 'italic',
+            fontSize: 'clamp(14px, 1.6vw, 15px)',
             lineHeight: 'var(--leading-body)',
             letterSpacing: '0',
             color: 'var(--color-primary)',
+            margin: '0 0 2rem 0',
           }}
         >
           Eight years across startups, agencies, and enterprise. Most recent first.
         </p>
+
         <Timeline items={career} />
       </div>
 
-      <DiamondSeparator />
-
       {/* ── Education ── */}
-      <div>
-        <h2
-          className="font-sans font-bold mt-0 mb-6"
-          style={{
-            fontSize: 'clamp(16px, 2vw, 20px)',
-            letterSpacing: 'var(--tracking-heading)',
-            lineHeight: 'var(--leading-heading)',
-          }}
-        >
-          Education
-        </h2>
-        <div className="space-y-6">
+      <div className="prose">
+        <DiamondSeparator />
+        <SectionHeading>Education</SectionHeading>
+
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
           {education.map((item) => (
             <div key={item.id}>
               <p
-                className="font-sans font-bold m-0 mb-0.5"
                 style={{
-                  fontSize: 'clamp(14px, 1.8vw, 16px)',
+                  fontFamily: 'var(--font-sans)',
+                  fontWeight: 700,
+                  fontSize: 'clamp(14px, 1.8vw, 15px)',
                   letterSpacing: 'var(--tracking-heading)',
-                  lineHeight: 'var(--leading-heading)',
+                  lineHeight: 'var(--leading-tight)',
                   color: 'var(--color-foreground)',
+                  margin: '0 0 0.2rem 0',
                 }}
               >
                 {item.institution}
               </p>
               <p
-                className="font-sans font-medium text-sm m-0 mb-0.5"
-                style={{ color: 'var(--color-primary)', letterSpacing: 'var(--tracking-body)' }}
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '13px',
+                  fontWeight: 500,
+                  letterSpacing: 'var(--tracking-body)',
+                  color: 'var(--color-primary)',
+                  margin: '0 0 0.15rem 0',
+                }}
               >
                 {item.degree ?? item.programs?.join(' · ')} · {item.period}
               </p>
               {item.note && (
                 <p
-                  className="font-serif text-sm italic m-0"
-                  style={{ color: 'var(--color-primary)' }}
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontStyle: 'italic',
+                    fontSize: '13px',
+                    color: 'var(--color-primary)',
+                    margin: 0,
+                  }}
                 >
                   {item.note}
                 </p>
@@ -190,6 +221,7 @@ export default function About() {
           ))}
         </div>
       </div>
+
     </div>
   )
 }
