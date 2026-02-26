@@ -7,9 +7,9 @@ Session-by-session task tracker. Mark tasks ✅ when complete. Update "Current S
 ## Current Session Notes
 > _Update this block at the start of each session. Paste what was last completed, any blockers, and the next priority._
 
-**Last completed:** Phase 1 complete. Site live at https://elmarto87.github.io/personal-website/
-**Next up:** Phase 4 — Home page copy (use copywriting skill), then Phase 5 — About page + profile photo.
-**Pending user action:** Configure Namecheap DNS to point martoduran.co → GitHub Pages (see CLAUDE.md for records).
+**Last completed:** Phases 1–6 core complete. Copy refined (copywriting skill). Full design polish (frontend-design plugin). DNS live, SSL pending.
+**Next up:** Phase 7 — profile photo, projects content, mobile audit, SSL confirmation.
+**Pending user action:** Provide profile photo + project descriptions to finish the site.
 
 ---
 
@@ -22,76 +22,71 @@ Session-by-session task tracker. Mark tasks ✅ when complete. Update "Current S
 - ✅ `public/CNAME` with `martoduran.co`
 - ✅ GitHub Pages live at `https://elmarto87.github.io/personal-website/`
 
-**Namecheap DNS (do once — user action required):**
-- [ ] Add 4 A records pointing `@` to GitHub Pages IPs (see CLAUDE.md)
-- [ ] Add CNAME `www` → `elmarto87.github.io`
-- [ ] After DNS propagates (~24h), enable "Enforce HTTPS" in GitHub Pages settings
+**DNS:**
+- ✅ 4 A records + CNAME configured and propagated
+- ✅ martoduran.co pointing to GitHub Pages
+- ⏳ HTTPS/SSL — GitHub certificate still provisioning (auto, no action needed)
 
 ---
 
-## Phase 2: Design System & Shared Components
+## Phase 2: Design System & Shared Components ✅
 
-- [ ] Create `src/styles/tokens.css` — all Beaumont-derived CSS custom properties
-- [ ] Extend `tailwind.config.js` with custom colors, fonts, spacing
-- [ ] Add Google Fonts link (Albert Sans + STIX Two Text) OR copy woff2 files from `context/beaumont/assets/fonts/` to `public/assets/fonts/` and declare `@font-face`
-- [ ] `Header.jsx` — site name ("Martín Durán") + nav links (Home, About, Projects)
-- [ ] `Footer.jsx` — copyright + LinkedIn + email links
-- [ ] `DiamondSeparator.jsx` — horizontal rule with centered diamond accent
-- [ ] `Layout.jsx` — wraps pages with Header + Footer + constrained content width
+- ✅ `src/styles/tokens.css` — Beaumont-derived CSS custom properties
+- ✅ `tailwind.config.js` with custom colors, fonts, spacing
+- ✅ Local woff2 fonts (Albert Sans + STIX Two Text) via `@font-face`
+- ✅ `Header.jsx`, `Footer.jsx`, `DiamondSeparator.jsx`, `Layout.jsx`
 
 ---
 
-## Phase 3: Content Data Files
+## Phase 3: Content Data Files ✅
 
-- [ ] `src/data/career.js` — array of work history objects (company, title, dates, bullets)
-- [ ] `src/data/education.js` — education array
-- [ ] `src/data/skills.js` — skills array with category groupings
-- [ ] `src/data/projects.js` — empty array with shape defined (title, description, url, tags)
-
----
-
-## Phase 4: Home Page
-
-_Use copywriting skill to write hero copy and bio intro._
-
-- [ ] Hero section — name, tagline, current role
-- [ ] Short bio paragraph (2–3 sentences, editorial tone)
-- [ ] Two CTA buttons (About, Projects) — Beaumont button style
-- [ ] Responsive layout (mobile-first)
+- ✅ `src/data/career.js` — full work history from CV
+- ✅ `src/data/education.js`
+- ✅ `src/data/skills.js`
+- ✅ `src/data/projects.js` — empty, shape defined
 
 ---
 
-## Phase 5: About Page
+## Phase 4: Home Page ✅
 
-_Use copywriting skill for bio paragraphs and section intros._
+- ✅ STIX Two Text italic hero name
+- ✅ Tagline: demand gen → organic search → product arc
+- ✅ Bio (Option B: finance → marketing → product → Uber)
+- ✅ Uppercase tracked CTAs with → arrow
+- ✅ Staggered fade-up animation (5 elements)
 
-- [ ] Two-column bio block (photo 1/3 + bio text 2/3) — collapses to single column on mobile
-- [ ] Skills chips/tags section
-- [ ] `Timeline.jsx` component — vertical, LinkedIn style, most-recent-first
-- [ ] Populate timeline with career data from `src/data/career.js`
-- [ ] Education section
-- [ ] DiamondSeparator between each section
+---
+
+## Phase 5: About Page ✅
+
+- ✅ Two-column bio (1/3 photo + 2/3 text), collapses mobile
+- ✅ Skills chips with hover
+- ✅ Timeline: 2-col grid (years left, content right), square dots
+- ✅ Education section
+- ✅ Section headings: 11px uppercase editorial labels
+- [ ] **Replace photo placeholder** — add file to `public/assets/images/` and update `About.jsx` img src
 
 ---
 
 ## Phase 6: Projects Page
 
-- [ ] Placeholder empty state with tasteful copy
-- [ ] `ProjectCard.jsx` component (title, description, tags, link)
-- [ ] Grid layout (2 columns desktop, 1 column mobile)
-- [ ] Page ready to populate — projects data from `src/data/projects.js`
+- ✅ Placeholder empty state
+- ✅ ProjectCard layout ready
+- [ ] **Populate `src/data/projects.js`** — user to provide project descriptions
 
 ---
 
 ## Phase 7: Polish & Launch
 
-- [ ] `<head>` SEO meta tags — title, description, Open Graph, Twitter Card
-- [ ] `favicon.ico` / `favicon.svg`
-- [ ] Full mobile responsiveness audit
+- ✅ SEO meta tags + Open Graph + Twitter Card
+- ✅ favicon.svg
+- ✅ DNS propagated (martoduran.co live)
+- [ ] **Profile photo** (user action — provide image file)
+- [ ] **Projects content** (user action — provide descriptions)
+- [ ] Mobile responsiveness audit
 - [ ] Accessibility check (keyboard nav, alt text, color contrast)
-- [ ] Performance check (`npm run build` + Lighthouse)
-- [ ] First production deploy to `gh-pages`
-- [ ] Verify custom domain + HTTPS after DNS propagation
+- [ ] SSL confirmation (auto-provisioning, check back in a few hours)
+- [ ] Performance check (Lighthouse)
 
 ---
 
@@ -101,13 +96,22 @@ _Use copywriting skill for bio paragraphs and section intros._
 |----------|--------|-----------|
 | Routing | HashRouter | Avoids 404 issues on GitHub Pages with no server config |
 | Styling | Tailwind + CSS tokens | Beaumont tokens as CSS vars; Tailwind for utilities |
-| Font loading | Local woff2 (from context/) OR Google Fonts | Prefer local for performance; Google Fonts as fallback |
-| Build/deploy | Vite + `gh-pages` npm package | Simple; no Docker needed |
+| Font loading | Local woff2 | Better performance; no external dependency |
+| Build/deploy | Vite + `peaceiris/actions-gh-pages@v4` | Deploys `dist/` to `gh-pages` branch on push to `main` |
+| Design polish | `frontend-design` plugin | Installed from `claude-code-plugins` marketplace |
+
+---
+
+## Plugins Installed
+
+| Plugin | Source | Purpose |
+|--------|--------|---------|
+| `frontend-design` | `claude-code-plugins` marketplace | Production-grade UI polish for pages and components |
 
 ---
 
 ## Notes for Future Sessions
 
-- Profile photo still needed — user to provide for Phase 5 bio block
-- Projects content TBD — user will provide in a later session
-- Copy for Home and About pages: invoke `marketing-skills:copywriting` skill with CV context
+- **Profile photo** → drop file in `public/assets/images/martin.jpg` (or .png), then update the placeholder `<div>` in `About.jsx` to `<img src="/assets/images/martin.jpg" alt="Martín Durán" />`
+- **Projects** → share title, description, URL and tags for each; I'll populate `src/data/projects.js`
+- **SSL** → GitHub auto-provisions; check repo Settings → Pages in a few hours, then enable "Enforce HTTPS"
