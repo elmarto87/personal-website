@@ -269,6 +269,24 @@ img {
   position: relative;
 }
 
+.timeline-projects-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: 0.85rem;
+  transition: color var(--duration-fast) ease;
+}
+
+.timeline-projects-link:hover {
+  color: var(--color-foreground);
+  opacity: 1;
+  text-decoration: none;
+}
+
 .timeline-bullets li::before {
   content: '–';
   position: absolute;

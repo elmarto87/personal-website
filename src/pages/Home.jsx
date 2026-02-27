@@ -95,7 +95,7 @@ export default function Home() {
               About me <span aria-hidden="true">→</span>
             </Link>
             <Link to="/projects" className="btn btn-secondary">
-              Projects <span aria-hidden="true">→</span>
+              Projects & Missions <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>

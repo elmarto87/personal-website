@@ -62,7 +62,7 @@ export default function Header() {
           <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
             {[
               { to: '/about',    label: 'About' },
-              { to: '/projects', label: 'Projects' },
+              { to: '/projects', label: 'Projects & Missions' },
             ].map(({ to, label }) => (
               <li key={to}>
                 <NavLink

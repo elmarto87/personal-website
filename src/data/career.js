@@ -6,6 +6,7 @@ export const career = [
     period: 'Jan 2025 – Present',
     startDate: '2025-01',
     endDate: null,
+    projectsId: 'uber',
     bullets: [
       'Leading product strategy and development roadmap for support operations serving tens of thousands of global agents.',
       'Drove platform optimization resulting in a significant increase in Search Success Rate.',
@@ -22,6 +23,7 @@ export const career = [
     period: 'Jan 2024 – Jan 2025',
     startDate: '2024-01',
     endDate: '2025-01',
+    projectsId: 'holafly',
     bullets: [
       'Led global organic revenue growth including e-commerce SEO, Tech SEO, ASO, and off-page SEO.',
       'Created SEO product roadmaps and prioritization frameworks in collaboration with Product and Engineering.',
@@ -36,6 +38,7 @@ export const career = [
     period: 'Jan 2022 – Jan 2024',
     startDate: '2022-01',
     endDate: '2024-01',
+    projectsId: 'hubspot',
     bullets: [
       'Led organic marketing strategy for signup acquisition and MRR growth across Latin America and Spain.',
       'Created product landing pages and blog posts; implemented on-page SEO improvements.',
@@ -51,6 +54,7 @@ export const career = [
     period: 'Sep 2021 – Jan 2022',
     startDate: '2021-09',
     endDate: '2022-01',
+    projectsId: 'skale',
     bullets: [
       'Led a team of Growth Strategists delivering substantial results for a portfolio of high-growth SaaS clients.',
     ],
@@ -62,6 +66,7 @@ export const career = [
     period: 'Jan 2021 – Sep 2021',
     startDate: '2021-01',
     endDate: '2021-09',
+    projectsId: 'skale',
     bullets: [
       'Managed 12 client accounts across Link Building, SEO Consultancy, and SEO Content Strategy service levels.',
       'Created roadmaps to prioritize strategies executed by SEO, content, and product teams.',
@@ -74,6 +79,7 @@ export const career = [
     period: 'Dec 2019 – Jan 2021',
     startDate: '2019-12',
     endDate: '2021-01',
+    projectsId: 'forexboat',
     bullets: [
       'Created a profitable evergreen affiliate marketing channel through SEO and Social Media experiments.',
       'Drove impact across Organic Traffic, Udemy SEO, Affiliate Revenue, Membership Sales, and Ad monetization.',
@@ -86,6 +92,7 @@ export const career = [
     period: 'Mar 2019 – Nov 2019',
     startDate: '2019-03',
     endDate: '2019-11',
+    projectsId: 'bunny',
     bullets: [
       'Supported voice-over category revenue growth via SEO and market research.',
       'Performed in-depth competitor analysis and drafted growth roadmap for the writing category.',
@@ -98,6 +105,7 @@ export const career = [
     period: 'Jun 2016 – Nov 2018',
     startDate: '2016-06',
     endDate: '2018-11',
+    projectsId: 'superdatascience',
     bullets: [
       'Led marketing operations: CRM management, Email Marketing, Lead Generation, Content & SEO, Social Media.',
     ],

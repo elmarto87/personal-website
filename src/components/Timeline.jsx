@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 function yearRange(startDate, endDate) {
   const sy = startDate.slice(0, 4)
   if (!endDate) return { top: sy, bottom: 'now' }
@@ -47,6 +49,16 @@ export default function Timeline({ items }) {
                     <li key={j}>{bullet}</li>
                   ))}
                 </ul>
+              )}
+
+              {item.projectsId && (
+                <Link
+                  to="/projects"
+                  state={{ scrollTo: item.projectsId }}
+                  className="timeline-projects-link"
+                >
+                  Projects &amp; missions →
+                </Link>
               )}
             </div>
           </div>
