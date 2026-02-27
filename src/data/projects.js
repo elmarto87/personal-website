@@ -18,7 +18,29 @@ export const projectSections = [
     id: 'hubspot',
     company: 'HubSpot',
     period: 'Jan 2022 – Jan 2024',
-    projects: [],
+    projects: [
+      {
+        id: 'hubspot-organic',
+        title: 'Organic Growth — hubspot.es/products',
+        description: 'Built and optimized Spanish-language product landing pages to drive organic signup acquisition across Latin America and Spain. Combined content SEO, on-page improvements, and product-led page strategy. Result: 50%+ Y/Y growth in organic monthly traffic and doubled organic signups in under 12 months.',
+        tags: ['Content SEO', 'Product Pages', 'Organic Growth', 'Latam & Spain'],
+        thumbnail: '/assets/images/hubspot-organic.png',
+      },
+      {
+        id: 'hubspot-cro',
+        title: 'Signup CRO — A/B Testing on Product Pages',
+        description: 'Ran structured A/B experiments on HubSpot\'s Spanish product landing pages to improve signup CVR. One example: an anchoring bias test that added explainer SVGs to help visitors understand what they could achieve with the product before signing up. Variant won.',
+        tags: ['CRO', 'A/B Testing', 'Signup Flow', 'Conversion'],
+        thumbnail: '/assets/images/hubspot-cro.png',
+      },
+      {
+        id: 'hubspot-clients',
+        title: 'Client Results — Holded & Maze',
+        description: 'Scaled organic signups by 4.5x in under 12 months at Holded using content and programmatic SEO. Grew monthly organic signups by 283%+ in under 6 months at Maze through content strategy and site architecture improvements.',
+        tags: ['Programmatic SEO', 'Content Strategy', 'Site Architecture'],
+        thumbnail: null,
+      },
+    ],
   },
   {
     id: 'skale',

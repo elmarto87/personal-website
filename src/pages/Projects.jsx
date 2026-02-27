@@ -50,6 +50,13 @@ function ProjectCard({ project }) {
 
   return (
     <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
+      {project.thumbnail && (
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          style={{ display: 'block', width: '100%', marginBottom: '1.25rem', border: '1px solid var(--color-secondary)' }}
+        />
+      )}
       <p
         style={{
           fontFamily: 'var(--font-sans)',
