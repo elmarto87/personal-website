@@ -72,7 +72,7 @@ export default function Home() {
               margin: '0 0 1.5rem 0',
             }}
           >
-            Martín<br />Durán
+            I'm Martín<br />Durán
           </h1>
 
           <p

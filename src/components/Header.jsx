@@ -1,5 +1,22 @@
 import { Link, NavLink } from 'react-router-dom'
 
+/* Geometric logomark — concentric circles motif */
+function LogoMark() {
+  return (
+    <svg
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
+      fill="none"
+      aria-label="Martín Durán — home"
+    >
+      <circle cx="14" cy="14" r="12.5" stroke="currentColor" strokeWidth="1.25" />
+      <circle cx="14" cy="14" r="7"    stroke="currentColor" strokeWidth="1.25" />
+      <circle cx="14" cy="14" r="2.5"  fill="currentColor" />
+    </svg>
+  )
+}
+
 export default function Header() {
   return (
     <header
@@ -23,29 +40,28 @@ export default function Header() {
           gap: '2rem',
         }}
       >
-        {/* Site name — readable weight, no decoration */}
+        {/* Geometric logomark — links home */}
         <Link
           to="/"
           style={{
-            fontFamily: 'var(--font-sans)',
-            fontWeight: 500,
-            fontSize: '15px',
-            letterSpacing: 'var(--tracking-body)',
             color: 'var(--color-foreground)',
             textDecoration: 'none',
+            display: 'flex',
+            alignItems: 'center',
             transition: 'opacity var(--duration-fast) ease',
           }}
-          onMouseEnter={e => e.currentTarget.style.opacity = '0.6'}
+          onMouseEnter={e => e.currentTarget.style.opacity = '0.55'}
           onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+          aria-label="Home"
         >
-          Martín Durán
+          <LogoMark />
         </Link>
 
-        {/* Nav — uppercase, tracked, small */}
+        {/* Nav */}
         <nav>
           <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none', margin: 0, padding: 0 }}>
             {[
-              { to: '/about', label: 'About' },
+              { to: '/about',    label: 'About' },
               { to: '/projects', label: 'Projects' },
             ].map(({ to, label }) => (
               <li key={to}>
