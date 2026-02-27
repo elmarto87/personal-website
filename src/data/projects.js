@@ -27,18 +27,6 @@ export const projectSections = [
     projects: [],
   },
   {
-    id: 'forexboat',
-    company: 'ForexBoat',
-    period: 'Dec 2019 – Jan 2021',
-    projects: [],
-  },
-  {
-    id: 'bunny',
-    company: 'Bunny Studio',
-    period: 'Mar 2019 – Nov 2019',
-    projects: [],
-  },
-  {
     id: 'superdatascience',
     company: 'SuperDataScience',
     period: 'Jun 2016 – Nov 2018',

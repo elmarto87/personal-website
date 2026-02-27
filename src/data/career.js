@@ -79,7 +79,6 @@ export const career = [
     period: 'Dec 2019 – Jan 2021',
     startDate: '2019-12',
     endDate: '2021-01',
-    projectsId: 'forexboat',
     bullets: [
       'Created a profitable evergreen affiliate marketing channel through SEO and Social Media experiments.',
       'Drove impact across Organic Traffic, Udemy SEO, Affiliate Revenue, Membership Sales, and Ad monetization.',
@@ -92,7 +91,6 @@ export const career = [
     period: 'Mar 2019 – Nov 2019',
     startDate: '2019-03',
     endDate: '2019-11',
-    projectsId: 'bunny',
     bullets: [
       'Supported voice-over category revenue growth via SEO and market research.',
       'Performed in-depth competitor analysis and drafted growth roadmap for the writing category.',
