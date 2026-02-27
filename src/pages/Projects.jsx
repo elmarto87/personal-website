@@ -21,18 +21,44 @@ function SectionHeading({ children }) {
   )
 }
 
-function ProjectCard({ project }) {
+function CampaignCard({ campaign }) {
   return (
-    <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.25rem', paddingBottom: '1.25rem' }}>
+    <a
+      href={campaign.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="campaign-card"
+    >
+      {campaign.thumbnail && (
+        <img
+          src={campaign.thumbnail}
+          alt={campaign.title}
+          style={{ display: 'block', width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', marginBottom: '1rem' }}
+        />
+      )}
+      <p className="campaign-card-source">Kickstarter</p>
+      <p className="campaign-card-title">{campaign.title}</p>
+      <p className="campaign-card-subtitle">{campaign.subtitle}</p>
+      <p className="campaign-card-status">✓ Successfully funded</p>
+    </a>
+  )
+}
+
+function ProjectCard({ project }) {
+  const hasCampaigns = project.campaigns && project.campaigns.length > 0
+  const hasUrl = project.url && !hasCampaigns
+
+  return (
+    <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
       <p
         style={{
           fontFamily: 'var(--font-sans)',
           fontWeight: 700,
-          fontSize: 'clamp(14px, 1.8vw, 16px)',
+          fontSize: 'clamp(15px, 1.8vw, 17px)',
           letterSpacing: 'var(--tracking-heading)',
           lineHeight: 'var(--leading-tight)',
           color: 'var(--color-foreground)',
-          margin: '0 0 0.4rem 0',
+          margin: '0 0 0.75rem 0',
         }}
       >
         {project.title}
@@ -41,17 +67,18 @@ function ProjectCard({ project }) {
         style={{
           fontFamily: 'var(--font-sans)',
           fontWeight: 400,
-          fontSize: 'clamp(13px, 1.6vw, 15px)',
+          fontSize: 'clamp(14px, 1.7vw, 16px)',
           lineHeight: 'var(--leading-body)',
           letterSpacing: 'var(--tracking-body)',
           color: 'var(--color-primary)',
-          margin: project.url ? '0 0 0.75rem 0' : 0,
+          margin: '0 0 1rem 0',
         }}
       >
         {project.description}
       </p>
+
       {project.tags && project.tags.length > 0 && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: project.url ? '0.75rem' : 0 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: hasCampaigns ? '1.5rem' : hasUrl ? '1rem' : 0 }}>
           {project.tags.map((tag) => (
             <span key={tag} className="skill-chip" style={{ fontSize: '11px', padding: '0.2rem 0.6rem' }}>
               {tag}
@@ -59,7 +86,16 @@ function ProjectCard({ project }) {
           ))}
         </div>
       )}
-      {project.url && (
+
+      {hasCampaigns && (
+        <div className="campaign-grid">
+          {project.campaigns.map((campaign) => (
+            <CampaignCard key={campaign.id} campaign={campaign} />
+          ))}
+        </div>
+      )}
+
+      {hasUrl && (
         <a
           href={project.url}
           target="_blank"

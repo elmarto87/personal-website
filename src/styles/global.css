@@ -553,3 +553,70 @@ img {
   gap: clamp(2rem, 4vw, 3.5rem);
   flex-wrap: wrap;
 }
+
+/* ------------------------------------------- */
+/* Campaign cards (Projects page)               */
+/* ------------------------------------------- */
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 540px) {
+  .campaign-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.campaign-card {
+  display: block;
+  border: 1px solid var(--color-secondary);
+  padding: 1rem 1.25rem 1.25rem;
+  text-decoration: none;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.campaign-card:hover {
+  border-color: var(--color-foreground);
+  opacity: 1;
+}
+
+.campaign-card-source {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin: 0 0 0.6rem 0;
+}
+
+.campaign-card-title {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-tight);
+  color: var(--color-foreground);
+  margin: 0 0 0.2rem 0;
+}
+
+.campaign-card-subtitle {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-primary);
+  margin: 0 0 0.85rem 0;
+}
+
+.campaign-card-status {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+  margin: 0;
+}

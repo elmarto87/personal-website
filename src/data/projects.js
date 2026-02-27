@@ -42,6 +42,43 @@ export const projectSections = [
     id: 'superdatascience',
     company: 'SuperDataScience',
     period: 'Jun 2016 – Nov 2018',
-    projects: [],
+    projects: [
+      {
+        id: 'sds-kickstarter',
+        title: 'Four Kickstarter Launches — AU$591K+',
+        description: 'I owned full-funnel GTM for four Kickstarter campaigns across AI, Deep Learning, Blockchain, and Computer Vision courses — email strategy, paid ads, campaign page copy, and community promotion. All four were successfully funded. Combined, they raised AU$591K+ from 9,000+ backers. The lesson I took from those launches: distribution is as much of the product as the product itself.',
+        tags: ['Email Strategy', 'Paid Ads', 'Campaign Copy', 'GTM', 'Community'],
+        campaigns: [
+          {
+            id: 'ks-ai',
+            title: 'Artificial Intelligence A-Z™',
+            subtitle: 'Learn How To Build An AI',
+            url: 'https://www.kickstarter.com/projects/kirilleremenko/artificial-intelligence-a-ztm-learn-how-to-build-a',
+            thumbnail: null,
+          },
+          {
+            id: 'ks-dl',
+            title: 'Deep Learning A-Z™',
+            subtitle: 'Online Course',
+            url: 'https://www.kickstarter.com/projects/kirilleremenko/deep-learning-a-ztm-online-course',
+            thumbnail: null,
+          },
+          {
+            id: 'ks-bc',
+            title: 'Blockchain A-Z™',
+            subtitle: 'Learn How To Build Your Own Blockchain',
+            url: 'https://www.kickstarter.com/projects/kirilleremenko/blockchain-a-ztm-learn-how-to-build-your-own-block/creator',
+            thumbnail: null,
+          },
+          {
+            id: 'ks-cv',
+            title: 'Computer Vision A-Z™',
+            subtitle: 'Learn OpenCV and Cutting-Edge Techniques',
+            url: 'https://www.kickstarter.com/projects/kirilleremenko/computer-vision-a-ztm-learn-opencv-and-cutting-edg',
+            thumbnail: null,
+          },
+        ],
+      },
+    ],
   },
 ]
