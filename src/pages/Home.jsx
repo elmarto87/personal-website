@@ -23,7 +23,7 @@ function GeometricPhoto() {
 
       {/* Profile photo */}
       <img
-        src="/assets/images/martin.jpg"
+        src="/assets/images/martin.png"
         alt="Martín Durán"
         className="geo-photo-img"
       />
