@@ -13,7 +13,7 @@ export default function Layout() {
           marginLeft: 'auto',
           marginRight: 'auto',
           width: '100%',
-          padding: 'clamp(3rem, 6vw, 5rem) var(--gutter)',
+          padding: 'clamp(1.5rem, 3vw, 3rem) var(--gutter)',
         }}
       >
         <Outlet />

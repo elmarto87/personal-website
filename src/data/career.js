@@ -7,7 +7,7 @@ export const career = [
     startDate: '2025-01',
     endDate: null,
     bullets: [
-      'Leading product strategy and development roadmap for support operations serving thousands of global agents.',
+      'Leading product strategy and development roadmap for support operations serving tens of thousands of global agents.',
       'Drove platform optimization resulting in a significant increase in Search Success Rate.',
       'Implemented RICE scoring framework to prioritize high-impact features for agent and content manager workflows.',
       'Launched an internal newsletter and Slack community to keep agents and content managers aligned on product updates.',

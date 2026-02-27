@@ -115,13 +115,13 @@ export default function Home() {
           lineHeight: 'var(--leading-body)',
           letterSpacing: 'var(--tracking-body)',
           color: 'var(--color-foreground)',
-          margin: 'clamp(2.5rem, 5vw, 4rem) 0 0',
+          margin: 'clamp(1.25rem, 2.5vw, 2rem) 0 0',
         }}
       >
         My career follows a logic that only makes sense in reverse: finance
         taught me systems, marketing taught me people, and product gave me the
         tools to build for both. These days I lead the Knowledge Base product
-        at Uber, where thousands of support agents rely on search to do their jobs.
+        at Uber, where tens of thousands of support agents rely on search to do their jobs.
       </p>
 
       {/* ── Companies logo strip ── */}

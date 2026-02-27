@@ -110,7 +110,7 @@ export default function About() {
           >
             Since then I've led organic growth at HubSpot across Latin America
             and Spain, managed SEO and ASO teams at Holafly, and now lead the
-            Knowledge Base product at Uber — a platform used by thousands of
+            Knowledge Base product at Uber — a platform used by tens of thousands of
             support agents to find answers and resolve cases. The through-line
             starts earlier: at SuperDataScience, I ran end-to-end product
             launches and built the email and content campaigns that grew their

@@ -456,7 +456,7 @@ img {
 
 .geo-photo-img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center top;
   display: block;
@@ -502,9 +502,9 @@ img {
 }
 
 .company-logo {
-  height: 28px;
+  height: 32px;
   width: auto;
-  max-width: 120px;
+  max-width: 140px;
   display: block;
   filter: grayscale(100%) opacity(0.5);
   transition: filter var(--duration-base) ease;
@@ -515,7 +515,7 @@ img {
 }
 
 .companies-section {
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(1.25rem, 2.5vw, 2rem);
 }
 
 .companies-label {
