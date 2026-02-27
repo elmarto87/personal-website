@@ -247,7 +247,7 @@ img {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin: 0 0 0.85rem 0;
 }
 
@@ -289,12 +289,13 @@ img {
   color: var(--color-primary);
   border: 1px solid var(--color-rule);
   padding: 0.3rem 0.75rem;
-  transition: border-color var(--duration-fast) ease, color var(--duration-fast) ease;
+  transition: border-color var(--duration-fast) ease, color var(--duration-fast) ease, background-color var(--duration-fast) ease;
 }
 
 .skill-chip:hover {
   border-color: var(--color-foreground);
-  color: var(--color-foreground);
+  background-color: var(--color-foreground);
+  color: var(--color-background);
 }
 
 /* ------------------------------------------- */

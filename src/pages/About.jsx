@@ -36,18 +36,28 @@ export default function About() {
         }}
         className="bio-grid"
       >
-        {/* Profile photo */}
-        <img
-          src="/assets/images/martin.png"
-          alt="Martín Durán"
-          style={{
-            width: '100%',
-            aspectRatio: '1 / 1',
-            objectFit: 'cover',
-            objectPosition: 'center top',
-            display: 'block',
-          }}
-        />
+        {/* Profile photo — geometric decoration matching home page */}
+        <div className="geo-photo-wrap">
+          <svg
+            className="geo-circles"
+            viewBox="0 0 500 500"
+            fill="none"
+            aria-hidden="true"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <circle cx="250" cy="250" r="234" stroke="currentColor" strokeWidth="1" />
+            <circle cx="250" cy="250" r="192" stroke="currentColor" strokeWidth="1" />
+            <circle cx="250" cy="250" r="150" stroke="currentColor" strokeWidth="1" />
+            <circle cx="250" cy="250" r="108" stroke="currentColor" strokeWidth="1" />
+          </svg>
+          <div className="geo-dots geo-dots--br" aria-hidden="true" />
+          <div className="geo-dots geo-dots--tl" aria-hidden="true" />
+          <img
+            src="/assets/images/martin.png"
+            alt="Martín Durán"
+            className="geo-photo-img"
+          />
+        </div>
 
         {/* Bio text */}
         <div style={{ paddingTop: '0.25rem' }}>
@@ -76,7 +86,7 @@ export default function About() {
               margin: '0 0 1.75rem 0',
             }}
           >
-            KB Product Lead, Uber · ex-HubSpot · Cali, Colombia
+            KB Product Lead, Uber · ex-HubSpot
           </p>
 
           <p
@@ -90,11 +100,14 @@ export default function About() {
               margin: '0 0 1.15rem 0',
             }}
           >
-            My career doesn't follow a straight line — I studied accounting and
-            finance in Cali, spent a year on a business exchange in Montpellier,
-            and came back looking for work that sat at the edge of data and
-            creativity. I found it in digital marketing, and specifically in SEO:
-            the discipline where content, technology, and user intent meet.
+            My career doesn't follow a straight line — I studied{' '}
+            <strong>accounting and finance</strong> in{' '}
+            <strong>Cali, Colombia</strong>, spent a year on a business
+            exchange in <strong>Montpellier</strong>, and came back looking
+            for work that sat at the edge of data and creativity. I found it
+            in digital marketing, and specifically in{' '}
+            <strong>SEO</strong>: the discipline where content, technology,
+            and user intent meet.
           </p>
 
           <p
@@ -108,14 +121,13 @@ export default function About() {
               margin: 0,
             }}
           >
-            Since then I've led organic growth at HubSpot across Latin America
-            and Spain, managed SEO and ASO teams at Holafly, and now lead the
-            Knowledge Base product at Uber — a platform used by tens of thousands of
-            support agents to find answers and resolve cases. The through-line
-            starts earlier: at SuperDataScience, I ran end-to-end product
-            launches and built the email and content campaigns that grew their
-            audience from the ground up. Different companies, different scales —
-            same question: how do you make information findable?
+            Since then I've led organic growth at <strong>HubSpot</strong>{' '}
+            across Latin America and Spain, managed SEO and ASO teams at{' '}
+            <strong>Holafly</strong>, and now lead the Knowledge Base product
+            at <strong>Uber</strong> — a platform used by tens of thousands of
+            support agents to find answers and resolve cases. Different
+            companies, different scales —{' '}
+            <strong>same question: how do you make information findable?</strong>
           </p>
         </div>
       </div>
