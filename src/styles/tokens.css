@@ -24,6 +24,9 @@
   --wide-width:    960px;
   --gutter:        clamp(20px, 5.5vw, 56px);
 
+  /* ── Radius ── */
+  --radius-pill: 100px;
+
   /* ── Motion ── */
   --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
   --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);

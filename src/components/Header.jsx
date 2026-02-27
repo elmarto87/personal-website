@@ -54,9 +54,8 @@ export default function Header() {
                   style={({ isActive }) => ({
                     fontFamily: 'var(--font-sans)',
                     fontWeight: 500,
-                    fontSize: '11px',
-                    letterSpacing: 'var(--tracking-nav)',
-                    textTransform: 'uppercase',
+                    fontSize: '14px',
+                    letterSpacing: 'var(--tracking-body)',
                     textDecoration: 'none',
                     color: isActive ? 'var(--color-foreground)' : 'var(--color-primary)',
                     transition: 'color var(--duration-fast) ease',

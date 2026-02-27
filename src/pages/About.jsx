@@ -30,8 +30,6 @@ export default function About() {
       {/* ── Bio Header — uses full wide-width ── */}
       <div
         style={{
-          display: 'grid',
-          gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 2fr)',
           gap: 'clamp(2rem, 5vw, 4rem)',
           alignItems: 'start',
           marginBottom: '0',
@@ -55,12 +53,11 @@ export default function About() {
         <div style={{ paddingTop: '0.25rem' }}>
           <h1
             style={{
-              fontFamily: 'var(--font-serif)',
-              fontStyle: 'italic',
-              fontWeight: 400,
+              fontFamily: 'var(--font-sans)',
+              fontWeight: 800,
               fontSize: 'clamp(28px, 4vw, 40px)',
-              letterSpacing: '-0.02em',
-              lineHeight: 1.1,
+              letterSpacing: '-0.03em',
+              lineHeight: 1.05,
               color: 'var(--color-foreground)',
               margin: '0 0 0.5rem 0',
             }}
