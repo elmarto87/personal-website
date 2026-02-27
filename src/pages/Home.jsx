@@ -98,6 +98,35 @@ export default function Home() {
               Projects & Missions <span aria-hidden="true">→</span>
             </Link>
           </div>
+
+          <div className="home-hero-buttons" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+            <Link
+              to="/apps"
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '13px',
+                fontWeight: 500,
+                letterSpacing: 'var(--tracking-body)',
+                color: 'var(--color-primary)',
+                textDecoration: 'none',
+              }}
+            >
+              Apps I Have Created →
+            </Link>
+            <Link
+              to="/tools"
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '13px',
+                fontWeight: 500,
+                letterSpacing: 'var(--tracking-body)',
+                color: 'var(--color-primary)',
+                textDecoration: 'none',
+              }}
+            >
+              Tool Stack →
+            </Link>
+          </div>
         </div>
 
         {/* Photo + geometry */}

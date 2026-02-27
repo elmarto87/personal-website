@@ -63,6 +63,8 @@ export default function Header() {
             {[
               { to: '/about',    label: 'About' },
               { to: '/projects', label: 'Projects & Missions' },
+              { to: '/apps',     label: 'Apps' },
+              { to: '/tools',    label: 'Tool Stack' },
             ].map(({ to, label }) => (
               <li key={to}>
                 <NavLink
