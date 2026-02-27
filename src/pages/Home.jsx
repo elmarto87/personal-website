@@ -46,7 +46,7 @@ export default function Home() {
       <div className="home-hero-grid">
 
         {/* Text column */}
-        <div className="fade-up fade-up-1">
+        <div className="home-hero-text fade-up fade-up-1">
           <p
             style={{
               fontFamily: 'var(--font-sans)',
@@ -76,6 +76,7 @@ export default function Home() {
           </h1>
 
           <p
+            className="home-hero-tagline"
             style={{
               fontFamily: 'var(--font-sans)',
               fontWeight: 400,
@@ -84,13 +85,12 @@ export default function Home() {
               letterSpacing: 'var(--tracking-body)',
               color: 'var(--color-primary)',
               margin: '0 0 2.5rem 0',
-              maxWidth: '360px',
             }}
           >
             From demand generation to product — with a decade in organic search connecting the two.
           </p>
 
-          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+          <div className="home-hero-buttons" style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             <Link to="/about" className="btn btn-primary">
               About me <span aria-hidden="true">→</span>
             </Link>

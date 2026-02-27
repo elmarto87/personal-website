@@ -368,16 +368,49 @@ img {
   align-items: center;
 }
 
+/* Desktop: tagline constrained to match left column reading width */
+.home-hero-tagline {
+  max-width: 360px;
+}
+
 @media (max-width: 740px) {
   .home-hero-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
+  /* Photo first, constrained and centred */
   .home-hero-grid .geo-photo-wrap {
     order: -1;
-    max-width: 320px;
+    max-width: min(360px, 85vw);
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Centre all hero text when stacked */
+  .home-hero-text {
+    text-align: center;
+  }
+
+  /* Tagline: expand to full width on mobile */
+  .home-hero-tagline {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Buttons: centre in flex row */
+  .home-hero-buttons {
+    justify-content: center;
+  }
+
+  /* Companies: centre the whole section */
+  .companies-section {
+    text-align: center;
+  }
+
+  .companies-strip {
+    justify-content: center;
   }
 }
 
@@ -469,9 +502,9 @@ img {
 }
 
 .company-logo {
-  height: 22px;
+  height: 28px;
   width: auto;
-  max-width: 100px;
+  max-width: 120px;
   display: block;
   filter: grayscale(100%) opacity(0.5);
   transition: filter var(--duration-base) ease;
