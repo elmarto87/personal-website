@@ -273,7 +273,7 @@ img {
   content: '–';
   position: absolute;
   left: -1.1rem;
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 /* ------------------------------------------- */
