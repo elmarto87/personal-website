@@ -44,9 +44,22 @@ function CampaignCard({ campaign }) {
   )
 }
 
+function ExperimentCard({ experiment }) {
+  return (
+    <div className="experiment-card">
+      <p className="experiment-card-label">
+        Bias: {experiment.bias} · Lever: {experiment.lever}
+      </p>
+      <p className="experiment-card-description">{experiment.description}</p>
+      <p className="experiment-card-status">✓ Winner</p>
+    </div>
+  )
+}
+
 function ProjectCard({ project }) {
   const hasCampaigns = project.campaigns && project.campaigns.length > 0
-  const hasUrl = project.url && !hasCampaigns
+  const hasExperiments = project.experiments && project.experiments.length > 0
+  const hasUrl = project.url && !hasCampaigns && !hasExperiments
 
   return (
     <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
@@ -98,6 +111,14 @@ function ProjectCard({ project }) {
         <div className="campaign-grid">
           {project.campaigns.map((campaign) => (
             <CampaignCard key={campaign.id} campaign={campaign} />
+          ))}
+        </div>
+      )}
+
+      {hasExperiments && (
+        <div className="experiment-grid">
+          {project.experiments.map((experiment) => (
+            <ExperimentCard key={experiment.id} experiment={experiment} />
           ))}
         </div>
       )}

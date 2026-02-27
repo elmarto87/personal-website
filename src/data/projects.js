@@ -1,5 +1,5 @@
 // Projects & Missions — grouped by company.
-// Shape per project: { id, title, description, url, tags: [] }
+// Shape per project: { id, title, description, thumbnail, tags, campaigns, experiments }
 
 export const projectSections = [
   {
@@ -29,16 +29,35 @@ export const projectSections = [
       {
         id: 'hubspot-cro',
         title: 'Signup CRO — A/B Testing on Product Pages',
-        description: 'Ran structured A/B experiments on HubSpot\'s Spanish product landing pages to improve signup CVR. One example: an anchoring bias test that added explainer SVGs to help visitors understand what they could achieve with the product before signing up. Variant won.',
+        description: 'Ran structured A/B experiments on HubSpot\'s Spanish product landing pages to improve signup CVR. Applied cognitive bias frameworks to identify the highest-leverage levers. All four experiments resulted in winning variants.',
         tags: ['CRO', 'A/B Testing', 'Signup Flow', 'Conversion'],
         thumbnail: '/assets/images/hubspot-cro.png',
-      },
-      {
-        id: 'hubspot-clients',
-        title: 'Client Results — Holded & Maze',
-        description: 'Scaled organic signups by 4.5x in under 12 months at Holded using content and programmatic SEO. Grew monthly organic signups by 283%+ in under 6 months at Maze through content strategy and site architecture improvements.',
-        tags: ['Programmatic SEO', 'Content Strategy', 'Site Architecture'],
-        thumbnail: null,
+        experiments: [
+          {
+            id: 'exp-confirmation',
+            bias: 'Confirmation',
+            lever: 'CTA Copy',
+            description: 'Changed the hero CTA from "Empezar Gratis" to "Crea tu sitio web gratis" — matching the user\'s search intent to the desired action more precisely.',
+          },
+          {
+            id: 'exp-framing',
+            bias: 'Framing & Simplification',
+            lever: 'Navigation',
+            description: 'Reduced hero height on product pages to lower friction and push the signup CTA above the fold — less scroll, more conversions.',
+          },
+          {
+            id: 'exp-anchoring',
+            bias: 'Anchoring',
+            lever: 'Creative',
+            description: 'Added explainer SVGs to show users exactly what they could achieve with the product before hitting the CTA, anchoring perceived value.',
+          },
+          {
+            id: 'exp-zerocost',
+            bias: 'Zero Cost',
+            lever: 'Messaging',
+            description: 'Added "100% gratuito. No se requiere tarjeta de crédito" copy to neutralise the credit card anxiety that was acting as a conversion barrier.',
+          },
+        ],
       },
     ],
   },
@@ -46,7 +65,15 @@ export const projectSections = [
     id: 'skale',
     company: 'Skale',
     period: 'Jan 2021 – Jan 2022',
-    projects: [],
+    projects: [
+      {
+        id: 'skale-client-results',
+        title: 'SaaS Client Results — Holded & Maze',
+        description: 'Delivered measurable organic growth across a portfolio of high-growth SaaS clients. At Holded, scaled organic signups by 4.5x in under 12 months through content and programmatic SEO. At Maze, grew monthly organic signups by 283%+ in under 6 months by improving content strategy and site architecture.',
+        tags: ['Content SEO', 'Programmatic SEO', 'Site Architecture', 'SaaS'],
+        thumbnail: null,
+      },
+    ],
   },
   {
     id: 'superdatascience',
