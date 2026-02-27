@@ -121,7 +121,7 @@ export default function Home() {
         My career follows a logic that only makes sense in reverse: finance
         taught me systems, marketing taught me people, and product gave me the
         tools to build for both. These days I lead the Knowledge Base product
-        at Uber, where 44,000 support agents rely on search to do their jobs.
+        at Uber, where thousands of support agents rely on search to do their jobs.
       </p>
 
       {/* ── Companies logo strip ── */}

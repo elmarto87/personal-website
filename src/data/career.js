@@ -7,8 +7,8 @@ export const career = [
     startDate: '2025-01',
     endDate: null,
     bullets: [
-      'Leading product strategy and development roadmap for support operations serving 44,000+ global agents.',
-      'Drove platform optimization resulting in a 3.8pp increase in Search Success Rate (to +73%) while maintaining 99.7%+ uptime.',
+      'Leading product strategy and development roadmap for support operations serving thousands of global agents.',
+      'Drove platform optimization resulting in a significant increase in Search Success Rate.',
       'Implemented RICE scoring framework to prioritize high-impact features for agent and content manager workflows.',
       'Launched an internal newsletter and Slack community to keep agents and content managers aligned on product updates.',
       'Built AI-powered sentiment and SEO/IA analysis tools to automate content health monitoring and surface agent friction.',

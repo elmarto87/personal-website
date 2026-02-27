@@ -72,7 +72,7 @@ export default function About() {
               fontWeight: 500,
               letterSpacing: 'var(--tracking-nav)',
               textTransform: 'uppercase',
-              color: 'var(--color-secondary)',
+              color: 'var(--color-primary)',
               margin: '0 0 1.75rem 0',
             }}
           >
@@ -81,11 +81,11 @@ export default function About() {
 
           <p
             style={{
-              fontFamily: 'var(--font-serif)',
+              fontFamily: 'var(--font-sans)',
               fontWeight: 400,
-              fontSize: 'clamp(15px, 1.8vw, 17px)',
+              fontSize: 'clamp(15px, 1.9vw, 17px)',
               lineHeight: 'var(--leading-body)',
-              letterSpacing: '0',
+              letterSpacing: 'var(--tracking-body)',
               color: 'var(--color-foreground)',
               margin: '0 0 1.15rem 0',
             }}
@@ -99,23 +99,23 @@ export default function About() {
 
           <p
             style={{
-              fontFamily: 'var(--font-serif)',
+              fontFamily: 'var(--font-sans)',
               fontWeight: 400,
-              fontSize: 'clamp(15px, 1.8vw, 17px)',
+              fontSize: 'clamp(15px, 1.9vw, 17px)',
               lineHeight: 'var(--leading-body)',
-              letterSpacing: '0',
+              letterSpacing: 'var(--tracking-body)',
               color: 'var(--color-foreground)',
               margin: 0,
             }}
           >
             Since then I've led organic growth at HubSpot across Latin America
             and Spain, managed SEO and ASO teams at Holafly, and now lead the
-            Knowledge Base product at Uber — a platform used by 44,000 support
-            agents to find answers and resolve cases. The through-line starts
-            earlier: at SuperDataScience, I ran end-to-end product launches and
-            built the email and content campaigns that grew their audience from
-            the ground up. Different companies, different scales — same question:
-            how do you make information findable?
+            Knowledge Base product at Uber — a platform used by thousands of
+            support agents to find answers and resolve cases. The through-line
+            starts earlier: at SuperDataScience, I ran end-to-end product
+            launches and built the email and content campaigns that grew their
+            audience from the ground up. Different companies, different scales —
+            same question: how do you make information findable?
           </p>
         </div>
       </div>
@@ -127,12 +127,11 @@ export default function About() {
 
         <p
           style={{
-            fontFamily: 'var(--font-serif)',
+            fontFamily: 'var(--font-sans)',
             fontWeight: 400,
-            fontStyle: 'italic',
             fontSize: 'clamp(14px, 1.6vw, 15px)',
             lineHeight: 'var(--leading-body)',
-            letterSpacing: '0',
+            letterSpacing: 'var(--tracking-body)',
             color: 'var(--color-primary)',
             margin: '0 0 1.5rem 0',
           }}
@@ -156,12 +155,11 @@ export default function About() {
 
         <p
           style={{
-            fontFamily: 'var(--font-serif)',
+            fontFamily: 'var(--font-sans)',
             fontWeight: 400,
-            fontStyle: 'italic',
             fontSize: 'clamp(14px, 1.6vw, 15px)',
             lineHeight: 'var(--leading-body)',
-            letterSpacing: '0',
+            letterSpacing: 'var(--tracking-body)',
             color: 'var(--color-primary)',
             margin: '0 0 2rem 0',
           }}
@@ -208,8 +206,7 @@ export default function About() {
               {item.note && (
                 <p
                   style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontStyle: 'italic',
+                    fontFamily: 'var(--font-sans)',
                     fontSize: '13px',
                     color: 'var(--color-primary)',
                     margin: 0,
