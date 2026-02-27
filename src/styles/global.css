@@ -467,3 +467,16 @@ img {
   white-space: nowrap;
   margin: 0;
 }
+
+.company-logo {
+  height: 18px;
+  width: auto;
+  max-width: 88px;
+  display: block;
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter var(--duration-base) ease;
+}
+
+.company-logo:hover {
+  filter: grayscale(0%) opacity(1);
+}
