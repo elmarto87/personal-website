@@ -32,10 +32,10 @@ function GeometricPhoto() {
 }
 
 const companies = [
-  { name: 'Uber',               logo: 'https://logo.clearbit.com/uber.com' },
-  { name: 'Holafly',            logo: 'https://logo.clearbit.com/holafly.com' },
-  { name: 'HubSpot',            logo: 'https://logo.clearbit.com/hubspot.com' },
-  { name: 'Johnson & Johnson',  logo: 'https://logo.clearbit.com/jnj.com' },
+  { name: 'Uber',              logo: '/assets/images/logos/uber.svg' },
+  { name: 'HubSpot',           logo: '/assets/images/logos/hubspot.svg' },
+  { name: 'Holafly',           logo: '/assets/images/logos/holafly.svg' },
+  { name: 'Johnson & Johnson', logo: '/assets/images/logos/jnj.svg' },
 ]
 
 export default function Home() {
