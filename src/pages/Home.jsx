@@ -31,25 +31,10 @@ function GeometricPhoto() {
   )
 }
 
-const snapshot = [
-  {
-    role: 'Knowledge Base Product Lead',
-    company: 'Uber',
-    logo: 'https://logo.clearbit.com/uber.com',
-    years: '2025–',
-  },
-  {
-    role: 'SEO Product · ASO · Off-site Lead',
-    company: 'Holafly',
-    logo: 'https://logo.clearbit.com/holafly.com',
-    years: '2024',
-  },
-  {
-    role: 'SEO Product Strategist',
-    company: 'HubSpot',
-    logo: 'https://logo.clearbit.com/hubspot.com',
-    years: '2022–24',
-  },
+const companies = [
+  { name: 'Uber',    logo: 'https://logo.clearbit.com/uber.com' },
+  { name: 'Holafly', logo: 'https://logo.clearbit.com/holafly.com' },
+  { name: 'HubSpot', logo: 'https://logo.clearbit.com/hubspot.com' },
 ]
 
 export default function Home() {
@@ -123,13 +108,12 @@ export default function Home() {
       <p
         className="fade-up fade-up-3"
         style={{
-          fontFamily: 'var(--font-serif)',
+          fontFamily: 'var(--font-sans)',
           fontWeight: 400,
           fontSize: 'clamp(16px, 2.2vw, 19px)',
           lineHeight: 'var(--leading-body)',
-          letterSpacing: '0',
+          letterSpacing: 'var(--tracking-body)',
           color: 'var(--color-foreground)',
-          maxWidth: '600px',
           margin: 'clamp(2.5rem, 5vw, 4rem) 0 0',
         }}
       >
@@ -139,21 +123,19 @@ export default function Home() {
         at Uber, where 44,000 support agents rely on search to do their jobs.
       </p>
 
-      {/* ── Career snapshot — Beaumont-style list with logos ── */}
-      <div className="career-snapshot fade-up fade-up-4">
-        {snapshot.map(({ role, company, logo, years }) => (
-          <div key={role} className="career-snapshot-row">
-            <p className="career-snapshot-role">{role}</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.875rem' }}>
-              <img
-                src={logo}
-                alt={company}
-                className="company-logo"
-              />
-              <p className="career-snapshot-meta">{years}</p>
-            </div>
-          </div>
-        ))}
+      {/* ── Companies logo strip ── */}
+      <div className="companies-section fade-up fade-up-4">
+        <p className="companies-label">Some of the companies I've worked for</p>
+        <div className="companies-strip">
+          {companies.map(({ name, logo }) => (
+            <img
+              key={name}
+              src={logo}
+              alt={name}
+              className="company-logo"
+            />
+          ))}
+        </div>
       </div>
 
     </div>

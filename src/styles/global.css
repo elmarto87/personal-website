@@ -469,14 +469,35 @@ img {
 }
 
 .company-logo {
-  height: 18px;
+  height: 22px;
   width: auto;
-  max-width: 88px;
+  max-width: 100px;
   display: block;
-  filter: grayscale(100%) opacity(0.55);
+  filter: grayscale(100%) opacity(0.5);
   transition: filter var(--duration-base) ease;
 }
 
 .company-logo:hover {
   filter: grayscale(0%) opacity(1);
+}
+
+.companies-section {
+  margin-top: clamp(3rem, 6vw, 5rem);
+}
+
+.companies-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 1.5rem 0;
+}
+
+.companies-strip {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  flex-wrap: wrap;
 }
