@@ -1,7 +1,66 @@
-import { useEffect } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { useLocation } from 'react-router-dom'
 import DiamondSeparator from '../components/DiamondSeparator'
 import { projectSections } from '../data/projects'
+
+/* ── Lightbox ─────────────────────────────── */
+
+function Lightbox({ item, onClose }) {
+  useEffect(() => {
+    function onKey(e) { if (e.key === 'Escape') onClose() }
+    document.addEventListener('keydown', onKey)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', onKey)
+      document.body.style.overflow = ''
+    }
+  }, [onClose])
+
+  return (
+    <div className="lightbox-backdrop" onClick={onClose}>
+      <div className="lightbox-panel" onClick={e => e.stopPropagation()}>
+        <button className="lightbox-close" onClick={onClose} aria-label="Close">✕</button>
+
+        {item.thumbnail && (
+          <img src={item.thumbnail} alt="" className="lightbox-img" />
+        )}
+
+        <div className="lightbox-body">
+          {item.label && (
+            <p className="lightbox-label">{item.label}</p>
+          )}
+          {item.title && (
+            <p className="lightbox-title">{item.title}</p>
+          )}
+          <p className="lightbox-description">{item.description}</p>
+
+          {item.metrics && item.metrics.length > 0 && (
+            <ul className="lightbox-metrics">
+              {item.metrics.map((m, i) => <li key={i}>{m}</li>)}
+            </ul>
+          )}
+
+          {item.status && (
+            <p className="lightbox-status">{item.status}</p>
+          )}
+
+          {item.url && (
+            <a
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="lightbox-link"
+            >
+              {item.urlLabel ?? 'View →'}
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ── Section heading ──────────────────────── */
 
 function SectionHeading({ children }) {
   return (
@@ -21,13 +80,20 @@ function SectionHeading({ children }) {
   )
 }
 
-function CampaignCard({ campaign }) {
+/* ── Campaign card (Kickstarter) ──────────── */
+
+function CampaignCard({ campaign, onExpand }) {
   return (
-    <a
-      href={campaign.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className="campaign-card"
+      onClick={() => onExpand({
+        thumbnail: campaign.thumbnail,
+        title: campaign.title,
+        description: campaign.subtitle,
+        status: '✓ Successfully funded',
+        url: campaign.url,
+        urlLabel: 'View on Kickstarter →',
+      })}
     >
       {campaign.thumbnail && (
         <img
@@ -40,13 +106,24 @@ function CampaignCard({ campaign }) {
       <p className="campaign-card-title">{campaign.title}</p>
       <p className="campaign-card-subtitle">{campaign.subtitle}</p>
       <p className="campaign-card-status">✓ Successfully funded</p>
-    </a>
+      <span className="card-expand-hint">Expand ↗</span>
+    </div>
   )
 }
 
-function ExperimentCard({ experiment }) {
+/* ── Experiment card (CRO A/B tests) ─────── */
+
+function ExperimentCard({ experiment, onExpand }) {
   return (
-    <div className="experiment-card">
+    <div
+      className="experiment-card"
+      onClick={() => onExpand({
+        thumbnail: experiment.thumbnail,
+        label: `Bias: ${experiment.bias} · Lever: ${experiment.lever}`,
+        description: experiment.description,
+        status: '✓ Winner',
+      })}
+    >
       {experiment.thumbnail && (
         <img
           src={experiment.thumbnail}
@@ -60,16 +137,60 @@ function ExperimentCard({ experiment }) {
         </p>
         <p className="experiment-card-description">{experiment.description}</p>
         <p className="experiment-card-status">✓ Winner</p>
+        <span className="card-expand-hint">Expand ↗</span>
       </div>
     </div>
   )
 }
 
+/* ── Case study card (Skale clients) ─────── */
+
+function CaseCard({ caseStudy, onExpand }) {
+  return (
+    <div
+      className="experiment-card"
+      onClick={() => onExpand({
+        thumbnail: caseStudy.thumbnail,
+        label: caseStudy.type,
+        title: caseStudy.client,
+        description: caseStudy.description,
+        metrics: caseStudy.metrics,
+        status: '✓ Results verified',
+        url: caseStudy.url,
+        urlLabel: 'View case study →',
+      })}
+    >
+      {caseStudy.thumbnail && (
+        <img
+          src={caseStudy.thumbnail}
+          alt={caseStudy.client}
+          style={{ display: 'block', width: '100%', aspectRatio: '16 / 9', objectFit: 'cover' }}
+        />
+      )}
+      <div className="experiment-card-body">
+        <p className="experiment-card-label">{caseStudy.type}</p>
+        <p className="case-card-client">{caseStudy.client}</p>
+        <p className="experiment-card-description">{caseStudy.description}</p>
+        <ul className="case-card-metrics">
+          {caseStudy.metrics.slice(0, 2).map((m, i) => <li key={i}>{m}</li>)}
+        </ul>
+        <p className="experiment-card-status">✓ Results</p>
+        <span className="card-expand-hint">Expand ↗</span>
+      </div>
+    </div>
+  )
+}
+
+/* ── Project card ─────────────────────────── */
+
 function ProjectCard({ project }) {
-  const hasCampaigns = project.campaigns && project.campaigns.length > 0
+  const [lightboxItem, setLightboxItem] = useState(null)
+  const closeLightbox = useCallback(() => setLightboxItem(null), [])
+
+  const hasCampaigns  = project.campaigns  && project.campaigns.length  > 0
   const hasExperiments = project.experiments && project.experiments.length > 0
-  const hasImages = project.images && project.images.length > 0
-  const hasUrl = project.url && !hasCampaigns && !hasExperiments
+  const hasCases      = project.cases       && project.cases.length       > 0
+  const hasUrl        = project.url && !hasCampaigns && !hasExperiments && !hasCases
 
   return (
     <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
@@ -81,18 +202,6 @@ function ProjectCard({ project }) {
         />
       )}
 
-      {hasImages && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
-          {project.images.map((src, i) => (
-            <img
-              key={i}
-              src={src}
-              alt=""
-              style={{ display: 'block', width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', border: '1px solid var(--color-secondary)' }}
-            />
-          ))}
-        </div>
-      )}
       <p
         style={{
           fontFamily: 'var(--font-sans)',
@@ -121,7 +230,7 @@ function ProjectCard({ project }) {
       </p>
 
       {project.tags && project.tags.length > 0 && (
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: hasCampaigns ? '1.5rem' : hasUrl ? '1rem' : 0 }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
           {project.tags.map((tag) => (
             <span key={tag} className="skill-chip" style={{ fontSize: '11px', padding: '0.2rem 0.6rem' }}>
               {tag}
@@ -133,7 +242,7 @@ function ProjectCard({ project }) {
       {hasCampaigns && (
         <div className="campaign-grid">
           {project.campaigns.map((campaign) => (
-            <CampaignCard key={campaign.id} campaign={campaign} />
+            <CampaignCard key={campaign.id} campaign={campaign} onExpand={setLightboxItem} />
           ))}
         </div>
       )}
@@ -141,7 +250,15 @@ function ProjectCard({ project }) {
       {hasExperiments && (
         <div className="experiment-grid">
           {project.experiments.map((experiment) => (
-            <ExperimentCard key={experiment.id} experiment={experiment} />
+            <ExperimentCard key={experiment.id} experiment={experiment} onExpand={setLightboxItem} />
+          ))}
+        </div>
+      )}
+
+      {hasCases && (
+        <div className="experiment-grid">
+          {project.cases.map((c) => (
+            <CaseCard key={c.id} caseStudy={c} onExpand={setLightboxItem} />
           ))}
         </div>
       )}
@@ -163,9 +280,13 @@ function ProjectCard({ project }) {
           View →
         </a>
       )}
+
+      {lightboxItem && <Lightbox item={lightboxItem} onClose={closeLightbox} />}
     </div>
   )
 }
+
+/* ── Page ─────────────────────────────────── */
 
 export default function Projects() {
   const location = useLocation()

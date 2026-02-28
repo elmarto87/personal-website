@@ -575,12 +575,26 @@ img {
   border: 1px solid var(--color-secondary);
   padding: 1rem 1.25rem 1.25rem;
   text-decoration: none;
-  transition: border-color var(--duration-fast) ease;
+  cursor: pointer;
+  transition: border-color var(--duration-fast) ease, background-color var(--duration-base) ease;
 }
 
 .campaign-card:hover {
   border-color: var(--color-foreground);
+  background-color: var(--color-foreground);
   opacity: 1;
+}
+
+.campaign-card:hover .campaign-card-source,
+.campaign-card:hover .campaign-card-title,
+.campaign-card:hover .campaign-card-subtitle,
+.campaign-card:hover .campaign-card-status {
+  color: var(--color-background);
+}
+
+.campaign-card:hover .card-expand-hint {
+  color: var(--color-background);
+  opacity: 0.5;
 }
 
 .campaign-card-source {
@@ -591,6 +605,7 @@ img {
   text-transform: uppercase;
   color: var(--color-secondary);
   margin: 0 0 0.6rem 0;
+  transition: color var(--duration-base) ease;
 }
 
 .campaign-card-title {
@@ -601,6 +616,7 @@ img {
   line-height: var(--leading-tight);
   color: var(--color-foreground);
   margin: 0 0 0.2rem 0;
+  transition: color var(--duration-base) ease;
 }
 
 .campaign-card-subtitle {
@@ -610,6 +626,7 @@ img {
   line-height: 1.4;
   color: var(--color-primary);
   margin: 0 0 0.85rem 0;
+  transition: color var(--duration-base) ease;
 }
 
 .campaign-card-status {
@@ -619,6 +636,160 @@ img {
   letter-spacing: 0.01em;
   color: var(--color-primary);
   margin: 0;
+  transition: color var(--duration-base) ease;
+}
+
+/* ------------------------------------------- */
+/* Lightbox                                     */
+/* ------------------------------------------- */
+
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  background-color: rgba(29, 32, 31, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: lightboxFadeIn 160ms ease both;
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-panel {
+  background-color: var(--color-background);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: lightboxSlideUp 200ms var(--ease-out) both;
+}
+
+@keyframes lightboxSlideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  z-index: 1;
+  transition: color var(--duration-fast) ease;
+  line-height: 1;
+}
+
+.lightbox-close:hover {
+  color: var(--color-foreground);
+}
+
+.lightbox-img {
+  display: block;
+  width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  background-color: var(--color-secondary);
+}
+
+.lightbox-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+  border-top: 1px solid var(--color-secondary);
+}
+
+.lightbox-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.lightbox-title {
+  font-family: var(--font-sans);
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-foreground);
+  margin: 0 0 0.65rem 0;
+}
+
+.lightbox-description {
+  font-family: var(--font-sans);
+  font-size: clamp(13px, 1.6vw, 14px);
+  font-weight: 400;
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking-body);
+  color: var(--color-primary);
+  margin: 0 0 1rem 0;
+}
+
+.lightbox-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.lightbox-metrics li {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+  color: var(--color-foreground);
+  padding-left: 1.1rem;
+  position: relative;
+  line-height: 1.4;
+}
+
+.lightbox-metrics li::before {
+  content: '↗';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 11px;
+  top: 1px;
+}
+
+.lightbox-status {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-primary);
+  margin: 0 0 1rem 0;
+}
+
+.lightbox-link {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-body);
+  color: var(--color-foreground);
+  text-decoration: none;
+  transition: opacity var(--duration-fast) ease;
+}
+
+.lightbox-link:hover {
+  opacity: 0.65;
+  text-decoration: none;
 }
 
 /* ------------------------------------------- */
@@ -698,4 +869,78 @@ img {
 .experiment-card:hover .experiment-card-status {
   color: var(--color-background);
   opacity: 0.65;
+}
+
+/* ------------------------------------------- */
+/* Case study cards (Skale clients)             */
+/* ------------------------------------------- */
+
+.case-card-client {
+  font-family: var(--font-sans);
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 700;
+  letter-spacing: var(--tracking-heading);
+  color: var(--color-foreground);
+  margin: 0 0 0.5rem 0;
+  transition: color var(--duration-base) ease;
+}
+
+.experiment-card:hover .case-card-client {
+  color: var(--color-background);
+}
+
+.case-card-metrics {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.case-card-metrics li {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-body);
+  color: var(--color-primary);
+  padding-left: 0.9rem;
+  position: relative;
+  line-height: 1.4;
+  transition: color var(--duration-base) ease;
+}
+
+.experiment-card:hover .case-card-metrics li {
+  color: var(--color-background);
+  opacity: 0.75;
+}
+
+.case-card-metrics li::before {
+  content: '↗';
+  position: absolute;
+  left: 0;
+  font-size: 9px;
+  top: 1px;
+}
+
+/* ------------------------------------------- */
+/* Expand hint (shown on card hover)            */
+/* ------------------------------------------- */
+
+.card-expand-hint {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: var(--tracking-nav);
+  text-transform: uppercase;
+  color: transparent;
+  margin-top: 0.5rem;
+  transition: color var(--duration-base) ease;
+  line-height: 1;
+}
+
+.experiment-card:hover .card-expand-hint {
+  color: var(--color-background);
+  opacity: 0.5;
 }
