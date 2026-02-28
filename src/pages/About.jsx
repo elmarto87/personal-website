@@ -53,7 +53,7 @@ export default function About() {
           <div className="geo-dots geo-dots--br" aria-hidden="true" />
           <div className="geo-dots geo-dots--tl" aria-hidden="true" />
           <img
-            src="/assets/images/martin.png"
+            src="/assets/images/martin.jpg"
             alt="Martín Durán"
             className="geo-photo-img"
           />
