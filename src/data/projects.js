@@ -111,6 +111,13 @@ export const projectSections = [
     period: 'Jun 2016 – Nov 2018',
     projects: [
       {
+        id: 'sds-book',
+        title: 'Confident Data Skills — Amazon #1 Launch',
+        description: 'Led the GTM launch of Kirill Eremenko\'s book Confident Data Skills (Kogan Page, Jan 2018) — coordinating email campaigns, social media, and community activation to concentrate sales on launch day. The book hit #1 in its Amazon category on launch day.',
+        tags: ['Book Launch', 'GTM', 'Email Marketing', 'Community'],
+        url: 'https://www.amazon.com/Confident-Data-Skills-Fundamentals-Supercharge/dp/0749481544',
+      },
+      {
         id: 'sds-kickstarter',
         title: 'Four Kickstarter Launches — AU$591K+',
         description: 'I owned full-funnel GTM for four Kickstarter campaigns across AI, Deep Learning, Blockchain, and Computer Vision courses — email strategy, paid ads, campaign page copy, and community promotion. All four were successfully funded. Combined, they raised AU$591K+ from 9,000+ backers. The lesson I took from those launches: distribution is as much of the product as the product itself.',
