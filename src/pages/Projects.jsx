@@ -47,11 +47,20 @@ function CampaignCard({ campaign }) {
 function ExperimentCard({ experiment }) {
   return (
     <div className="experiment-card">
-      <p className="experiment-card-label">
-        Bias: {experiment.bias} · Lever: {experiment.lever}
-      </p>
-      <p className="experiment-card-description">{experiment.description}</p>
-      <p className="experiment-card-status">✓ Winner</p>
+      {experiment.thumbnail && (
+        <img
+          src={experiment.thumbnail}
+          alt=""
+          style={{ display: 'block', width: '100%', aspectRatio: '16 / 9', objectFit: 'cover' }}
+        />
+      )}
+      <div className="experiment-card-body">
+        <p className="experiment-card-label">
+          Bias: {experiment.bias} · Lever: {experiment.lever}
+        </p>
+        <p className="experiment-card-description">{experiment.description}</p>
+        <p className="experiment-card-status">✓ Winner</p>
+      </div>
     </div>
   )
 }
@@ -59,6 +68,7 @@ function ExperimentCard({ experiment }) {
 function ProjectCard({ project }) {
   const hasCampaigns = project.campaigns && project.campaigns.length > 0
   const hasExperiments = project.experiments && project.experiments.length > 0
+  const hasImages = project.images && project.images.length > 0
   const hasUrl = project.url && !hasCampaigns && !hasExperiments
 
   return (
@@ -69,6 +79,19 @@ function ProjectCard({ project }) {
           alt={project.title}
           style={{ display: 'block', width: '100%', marginBottom: '1.25rem', border: '1px solid var(--color-secondary)' }}
         />
+      )}
+
+      {hasImages && (
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.25rem' }}>
+          {project.images.map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt=""
+              style={{ display: 'block', width: '100%', aspectRatio: '16 / 9', objectFit: 'cover', border: '1px solid var(--color-secondary)' }}
+            />
+          ))}
+        </div>
       )}
       <p
         style={{
