@@ -2,6 +2,7 @@ export const career = [
   {
     id: 'uber',
     company: 'Uber',
+    logo: '/assets/images/logos/uber.svg',
     title: 'Knowledge Base Product Lead',
     period: 'Jan 2025 – Present',
     startDate: '2025-01',
@@ -19,6 +20,7 @@ export const career = [
   {
     id: 'holafly',
     company: 'Holafly',
+    logo: '/assets/images/logos/holafly.svg',
     title: 'SEO Product · ASO · Off-site Lead',
     period: 'Jan 2024 – Jan 2025',
     startDate: '2024-01',
@@ -34,6 +36,7 @@ export const career = [
   {
     id: 'hubspot',
     company: 'HubSpot',
+    logo: '/assets/images/logos/hubspot.svg',
     title: 'SEO Product Strategist — Latam & Spain',
     period: 'Jan 2022 – Jan 2024',
     startDate: '2022-01',
@@ -50,6 +53,7 @@ export const career = [
   {
     id: 'skale-lead',
     company: 'Skale',
+    logo: '/assets/images/logos/skale.jpeg',
     title: 'SEO Growth Strategy Team Lead',
     period: 'Sep 2021 – Jan 2022',
     startDate: '2021-09',
@@ -62,6 +66,7 @@ export const career = [
   {
     id: 'skale-strategist',
     company: 'Skale',
+    logo: '/assets/images/logos/skale.jpeg',
     title: 'SEO Growth Strategist (SaaS)',
     period: 'Jan 2021 – Sep 2021',
     startDate: '2021-01',
@@ -87,6 +92,7 @@ export const career = [
   {
     id: 'bunny',
     company: 'Bunny Studio',
+    logo: '/assets/images/logos/bunny-studio.png',
     title: 'Growth Marketer',
     period: 'Mar 2019 – Nov 2019',
     startDate: '2019-03',
@@ -99,6 +105,7 @@ export const career = [
   {
     id: 'superdatascience',
     company: 'SuperDataScience',
+    logo: '/assets/images/logos/superdatascience.jpeg',
     title: 'Operations Manager',
     period: 'Jun 2016 – Nov 2018',
     startDate: '2016-06',

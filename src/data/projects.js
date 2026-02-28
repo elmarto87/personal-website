@@ -5,6 +5,7 @@ export const projectSections = [
   {
     id: 'uber',
     company: 'Uber',
+    logo: '/assets/images/logos/uber.svg',
     period: 'Jan 2025 – Present',
     projects: [
       {
@@ -18,6 +19,7 @@ export const projectSections = [
   {
     id: 'holafly',
     company: 'Holafly',
+    logo: '/assets/images/logos/holafly.svg',
     period: 'Jan 2024 – Jan 2025',
     projects: [
       {
@@ -52,6 +54,7 @@ export const projectSections = [
   {
     id: 'hubspot',
     company: 'HubSpot',
+    logo: '/assets/images/logos/hubspot.svg',
     period: 'Jan 2022 – Jan 2024',
     projects: [
       {
@@ -102,6 +105,7 @@ export const projectSections = [
   {
     id: 'skale',
     company: 'Skale',
+    logo: '/assets/images/logos/skale.jpeg',
     period: 'Jan 2021 – Jan 2022',
     projects: [
       {
@@ -143,6 +147,7 @@ export const projectSections = [
   {
     id: 'superdatascience',
     company: 'SuperDataScience',
+    logo: '/assets/images/logos/superdatascience.jpeg',
     period: 'Jun 2016 – Nov 2018',
     projects: [
       {

@@ -62,21 +62,30 @@ function Lightbox({ item, onClose }) {
 
 /* ── Section heading ──────────────────────── */
 
-function SectionHeading({ children }) {
+function SectionHeading({ children, logo }) {
   return (
-    <h2
-      style={{
-        fontFamily: 'var(--font-sans)',
-        fontWeight: 700,
-        fontSize: 'clamp(11px, 1.4vw, 13px)',
-        letterSpacing: 'var(--tracking-nav)',
-        textTransform: 'uppercase',
-        color: 'var(--color-primary)',
-        margin: '0 0 0.35rem 0',
-      }}
-    >
-      {children}
-    </h2>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0 0 0.35rem 0' }}>
+      {logo && (
+        <img
+          src={logo}
+          alt=""
+          className="section-company-logo"
+        />
+      )}
+      <h2
+        style={{
+          fontFamily: 'var(--font-sans)',
+          fontWeight: 700,
+          fontSize: 'clamp(11px, 1.4vw, 13px)',
+          letterSpacing: 'var(--tracking-nav)',
+          textTransform: 'uppercase',
+          color: 'var(--color-primary)',
+          margin: 0,
+        }}
+      >
+        {children}
+      </h2>
+    </div>
   )
 }
 
@@ -359,7 +368,7 @@ export default function Projects() {
             <DiamondSeparator />
 
             <div id={section.id}>
-              <SectionHeading>{section.company}</SectionHeading>
+              <SectionHeading logo={section.logo}>{section.company}</SectionHeading>
               <p
                 style={{
                   fontFamily: 'var(--font-sans)',

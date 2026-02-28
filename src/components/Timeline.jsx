@@ -40,7 +40,16 @@ export default function Timeline({ items }) {
             {/* ── Content ── */}
             <div className="timeline-content-col">
               <p className="timeline-title">{item.title}</p>
-              <p className="timeline-company">{item.company}</p>
+              <div className="timeline-company-row">
+                {item.logo && (
+                  <img
+                    src={item.logo}
+                    alt={item.company}
+                    className="timeline-company-logo"
+                  />
+                )}
+                <p className="timeline-company">{item.company}</p>
+              </div>
               <p className="timeline-period">{item.period}</p>
 
               {item.bullets && item.bullets.length > 0 && (
