@@ -16,7 +16,7 @@ export const projectSections = [
       {
         id: 'holafly-cro',
         title: 'CRO & SEO — Organic All-Time High Revenue',
-        description: 'Ran CRO experiments across Holafly\'s product pages that improved conversion rate and created a compounding SEO effect: faster intent-matching means fewer users bouncing back to SERP, sending positive engagement signals to Google. The organic channel hit all-time high revenue during this period.',
+        description: 'Influenced CRO experiments across Holafly\'s product pages that improved conversion rate and created a compounding SEO effect: faster intent-matching means fewer users bouncing back to SERP, sending positive engagement signals to Google. The organic channel hit all-time high revenue during this period.',
         tags: ['CRO', 'A/B Testing', 'Mobile UX', 'SEO Signals'],
         experiments: [
           {
