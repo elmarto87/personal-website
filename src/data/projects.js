@@ -12,7 +12,35 @@ export const projectSections = [
     id: 'holafly',
     company: 'Holafly',
     period: 'Jan 2024 – Jan 2025',
-    projects: [],
+    projects: [
+      {
+        id: 'holafly-cro',
+        title: 'CRO & SEO — Organic All-Time High Revenue',
+        description: 'Ran CRO experiments across Holafly\'s product pages that improved conversion rate and created a compounding SEO effect: faster intent-matching means fewer users bouncing back to SERP, sending positive engagement signals to Google. The organic channel hit all-time high revenue during this period.',
+        tags: ['CRO', 'A/B Testing', 'Mobile UX', 'SEO Signals'],
+        experiments: [
+          {
+            id: 'holafly-exp-1',
+            bias: 'Simplification',
+            lever: 'Page Layout',
+            description: 'Added a pricing block above the fold on product pages. 79.67% of traffic came via mobile (SimilarWeb). Moving the CTA up reduced cognitive load and matched "buy" intent faster — and hit #1 in US and Canada for "eSIM europe" despite lower wordcount and fewer referring domains than competitors.',
+            thumbnail: '/assets/images/holafly-cro-1.png',
+          },
+        ],
+      },
+      {
+        id: 'holafly-authority',
+        title: 'Off-Site Authority — Original Research Content',
+        description: 'Built Holafly\'s off-site authority profile through original, data-driven research content targeting travel-adjacent topics — earning natural backlinks, press coverage, and positioning Holafly as a credible travel data source beyond the eSIM category.',
+        tags: ['Digital PR', 'Link Building', 'Content Strategy', 'Off-page SEO'],
+        links: [
+          { label: 'Apps that use most mobile data', url: 'https://esim.holafly.com/research/apps-that-use-most-mobile-data/' },
+          { label: 'Holiday Flight Delay Report', url: 'https://esim.holafly.com/research/holiday-flight-delay-report/' },
+          { label: "World's most connected cities", url: 'https://esim.holafly.com/research/most-connected-cities/' },
+          { label: "US tourist spots with worst mobile internet", url: 'https://esim.holafly.com/research/us-tourist-attractions-with-worst-mobile-internet/' },
+        ],
+      },
+    ],
   },
   {
     id: 'hubspot',

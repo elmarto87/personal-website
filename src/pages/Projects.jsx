@@ -187,10 +187,11 @@ function ProjectCard({ project }) {
   const [lightboxItem, setLightboxItem] = useState(null)
   const closeLightbox = useCallback(() => setLightboxItem(null), [])
 
-  const hasCampaigns  = project.campaigns  && project.campaigns.length  > 0
+  const hasCampaigns   = project.campaigns  && project.campaigns.length  > 0
   const hasExperiments = project.experiments && project.experiments.length > 0
-  const hasCases      = project.cases       && project.cases.length       > 0
-  const hasUrl        = project.url && !hasCampaigns && !hasExperiments && !hasCases
+  const hasCases       = project.cases       && project.cases.length       > 0
+  const hasLinks       = project.links       && project.links.length       > 0
+  const hasUrl         = project.url && !hasCampaigns && !hasExperiments && !hasCases && !hasLinks
 
   return (
     <div style={{ borderTop: '1px solid var(--color-secondary)', paddingTop: '1.5rem', paddingBottom: '1.5rem' }}>
@@ -259,6 +260,29 @@ function ProjectCard({ project }) {
         <div className="experiment-grid">
           {project.cases.map((c) => (
             <CaseCard key={c.id} caseStudy={c} onExpand={setLightboxItem} />
+          ))}
+        </div>
+      )}
+
+      {hasLinks && (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+          {project.links.map((link) => (
+            <a
+              key={link.url}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '12px',
+                fontWeight: 600,
+                letterSpacing: 'var(--tracking-body)',
+                color: 'var(--color-foreground)',
+                textDecoration: 'none',
+              }}
+            >
+              {link.label} →
+            </a>
           ))}
         </div>
       )}
