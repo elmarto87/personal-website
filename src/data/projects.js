@@ -6,7 +6,14 @@ export const projectSections = [
     id: 'uber',
     company: 'Uber',
     period: 'Jan 2025 – Present',
-    projects: [],
+    projects: [
+      {
+        id: 'uber-platform-recovery',
+        title: 'Platform Recovery & Vendor Operating System Overhaul',
+        description: 'Inherited a knowledge base platform in crisis. A recent tool migration had left the system unstable — constant outages, significant search latency, and tens of thousands of global support agents unable to reliably access the content they needed to do their jobs. Stepped in to diagnose the failure points, revamp the operating model with the vendor, and establish new ways of working to immediately stabilize the platform. Re-initiated the contract and renegotiated SLAs, which created the foundation to build mid-term and long-term feature roadmaps structured around the RISE framework. Uptime recovered to industry benchmark levels. Separately, introduced a more robust analytics layer — attribution and event tracking across the full search journey — to give the team genuine visibility into what agents experience in search and where friction lives.',
+        tags: ['Platform Recovery', 'Vendor Management', 'SLA Negotiation', 'RISE Framework', 'Search Analytics', 'Roadmap'],
+      },
+    ],
   },
   {
     id: 'holafly',
